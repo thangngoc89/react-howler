@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Howl } from 'howler'
+import { Howl } from 'howler/src/howler.core'
 import { noop, runIfSet } from './utils'
 
 class ReactHowler extends Component {
