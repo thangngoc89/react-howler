@@ -8,7 +8,7 @@
     "clean": "rm -rf dist",
     "start": "webpack --config webpack.dev.js --watch --hot --progress --color",
     "build": "webpack --config webpack.dev.js",
-    "test": "mocha tests/**/*.spec.js --compilers js:babel-core/register --recursive",
+    "test": "mocha test/**/*.spec.js --compilers js:babel-core/register --recursive",
     "test:watch": "npm test -- --watch"
   },
   "repository": {
