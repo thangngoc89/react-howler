@@ -1,0 +1,58 @@
+{
+  "name": "react-howler",
+  "version": "0.1.0",
+  "description": "A React.js wrapper for howler.js (audio player)",
+  "main": "src/index.js",
+  "scripts": {
+    "coverage": "babel-node node_modules/.bin/babel-istanbul cover _mocha",
+    "clean": "rm -rf dist",
+    "start": "webpack --config webpack.dev.js --watch --hot",
+    "build": "webpack --config webpack.dev.js",
+    "test": "mocha test --compilers js:babel-core/register --recursive",
+    "test:watch": "npm test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thangngoc89/react-howler.git"
+  },
+  "keywords": [
+    "react.js",
+    "redux",
+    "audio",
+    "player",
+    "howler",
+    "howler.js"
+  ],
+  "author": "Khoa Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thangngoc89/react-howler/issues"
+  },
+  "homepage": "https://github.com/thangngoc89/react-howler#readme",
+  "dependencies": {
+    "howler": "git+https://github.com/goldfire/howler.js.git#v2.0.0-beta6"
+  },
+  "peerDependencies": {
+    "react": "^0.14.x",
+    "react-dom": "^0.14.x"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.4.0",
+    "babel-core": "^6.4.0",
+    "babel-istanbul": "^0.6.0",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-transform-runtime": "^6.4.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.0.1",
+    "babel-preset-stage-0": "^6.3.13",
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "react": "^0.14.6",
+    "react-addons-test-utils": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "standard-loader": "^2.0.0",
+    "webpack": "^1.12.10",
+    "webpack-dev-server": "^1.14.0"
+  }
+}
