@@ -51,6 +51,8 @@
     "react": "^0.14.6",
     "react-addons-test-utils": "^0.14.6",
     "react-dom": "^0.14.6",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0",
     "standard-loader": "^2.0.0",
     "webpack": "^1.12.10",
     "webpack-dev-server": "^1.14.0"
