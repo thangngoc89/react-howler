@@ -1,6 +1,6 @@
 {
   "name": "react-howler",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React.js wrapper for howler.js (audio player)",
   "main": "lib/index.js",
   "scripts": {
@@ -8,8 +8,9 @@
     "clean": "rimraf lib",
     "start": "webpack-dev-server --config webpack.config.js --watch --hot --progress --color",
     "lint": "standard",
-    "prebuild": "npm run clean",
     "build": "babel src -d lib",
+    "prepublish": "npm run lint && npm run build",
+    "postpublish": "npm run clean",
     "test": "mocha test --compilers js:babel-core/register --recursive",
     "test:watch": "npm test -- --watch"
   },
