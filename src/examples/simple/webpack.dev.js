@@ -26,7 +26,7 @@ module.exports = {
   resolve: {
     alias: {
       'react-howler': path.join(__dirname, '../../index.js'),
-      'sound.ogg': path.join(__dirname, '../../../test/stubs/sound.ogg')
+      'sound.ogg': path.join(__dirname, '../../../tests/stubs/sound.ogg')
     },
     extensions: ['', '.js']
   },
