@@ -1,36 +1,15 @@
 {
   "name": "react-howler-example",
-  "version": "0.1.0",
-  "description": "A React.js wrapper for howler.js (audio player)",
-  "main": "src/index.js",
+  "private": true,
   "scripts": {
-    "clean": "rm -rf dist",
     "prestart": "npm run clean",
-    "start": "NODE_ENV=development webpack-dev-server --config webpack.dev.js --watch --hot --port 3000",
+    "start": "webpack-dev-server --config webpack.config.js --watch --progress --color --hot --port 3000",
     "build": "webpack --config webpack.dev.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thangngoc89/react-howler.git"
-  },
-  "keywords": [
-    "react.js",
-    "redux",
-    "audio",
-    "player",
-    "howler",
-    "howler.js"
-  ],
   "author": "Khoa Nguyen",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/thangngoc89/react-howler/issues"
-  },
-  "homepage": "https://github.com/thangngoc89/react-howler#readme",
   "dependencies": {
-    "raf": "^3.1.0"
-  },
-  "peerDependencies": {
+    "raf": "^3.1.0",
     "react": "^0.14.x",
     "react-dom": "^0.14.x"
   },

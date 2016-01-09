@@ -1,7 +1,5 @@
 import React from 'react'
-/* eslint-disable */
 import { OnlyPlayPauseButton, AutoPlay, FullControl } from './players'
-/* eslint-enable */
 import { Howler } from 'react-howler'
 
 class App extends React.Component {
@@ -19,13 +17,11 @@ class App extends React.Component {
           <hr />
         </section>
 
-        {/*
         <section>
           <h1>AutoPlay</h1>
           <AutoPlay />
           <hr />
         </section>
-        */}
 
         <section>
           <h1>Full Control</h1>

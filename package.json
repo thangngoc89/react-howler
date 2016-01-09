@@ -2,12 +2,14 @@
   "name": "react-howler",
   "version": "0.1.0",
   "description": "A React.js wrapper for howler.js (audio player)",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "coverage": "babel-node node_modules/.bin/babel-istanbul cover _mocha",
-    "clean": "rm -rf dist",
-    "start": "webpack --config webpack.dev.js --watch --hot",
-    "build": "webpack --config webpack.dev.js",
+    "clean": "rimraf lib",
+    "start": "webpack-dev-server --config webpack.config.js --watch --hot --progress --color",
+    "lint": "standard",
+    "prebuild": "npm run clean",
+    "build": "babel src -d lib",
     "test": "mocha test --compilers js:babel-core/register --recursive",
     "test:watch": "npm test -- --watch"
   },
@@ -16,6 +18,7 @@
     "url": "git+https://github.com/thangngoc89/react-howler.git"
   },
   "keywords": [
+    "react-component",
     "react.js",
     "redux",
     "audio",
@@ -23,7 +26,7 @@
     "howler",
     "howler.js"
   ],
-  "author": "Khoa Nguyen",
+  "author": "Khoa Nguyen <hi@khoanguyen.me>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/thangngoc89/react-howler/issues"
@@ -51,6 +54,7 @@
     "react": "^0.14.6",
     "react-addons-test-utils": "^0.14.6",
     "react-dom": "^0.14.6",
+    "rimraf": "^2.5.0",
     "standard-loader": "^2.0.0",
     "webpack": "^1.12.10",
     "webpack-dev-server": "^1.14.0"

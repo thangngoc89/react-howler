@@ -1,9 +1,7 @@
 var path = require('path')
-var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  target: 'web',
   devtool: 'eval-cheap-module-source-map',
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
@@ -25,8 +23,8 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      'react-howler': path.join(__dirname, '../../index.js'),
-      'sound.ogg': path.join(__dirname, '../../../test/stubs/sound.ogg')
+      'react-howler': path.join(__dirname, '../../src/index.js'),
+      'sound.ogg': path.join(__dirname, '../../test/stubs/sound.ogg')
     },
     extensions: ['', '.js']
   },

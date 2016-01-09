@@ -1,5 +1,4 @@
 var path = require('path')
-var webpack = require('webpack')
 
 module.exports = {
   devtool: 'eval-cheap-module-source-map',
@@ -10,12 +9,9 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    filename: 'index.js',
+    publicPath: '/'
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
@@ -24,14 +20,14 @@ module.exports = {
       {
         test: /\.js?$/,
         loader: 'standard',
-        include: path.join(__dirname, 'src')
+        exclude: /node_modules/
       }
     ],
     loaders: [
       {
         test: /\.js?$/,
         loader: 'babel',
-        include: path.join(__dirname, 'src'),
+        exclude: /node_modules/,
         query: {
           cacheDirectory: true
         }

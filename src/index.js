@@ -1,5 +1,5 @@
-import Howl from './Howl'
-export default Howl
+import ReactHowler from './ReactHowler'
+export default ReactHowler
 
 // Export Howler instance
 export { Howler } from 'howler'
