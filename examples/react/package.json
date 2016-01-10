@@ -2,7 +2,6 @@
   "name": "react-howler-example",
   "private": true,
   "scripts": {
-    "prestart": "npm run clean",
     "start": "webpack-dev-server --config webpack.config.js --watch --progress --color --hot --port 3000",
     "build": "webpack --config webpack.dev.js"
   },
