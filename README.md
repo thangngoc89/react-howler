@@ -2,6 +2,7 @@
 A React.js wrapper for howler.js (audio player).
 
 ReactHowler has no UI. You has to provide your own UI
+
 Props can be passed to control playback and react to events such as end, load, play, ...
 
 [![Travis status](https://travis-ci.org/thangngoc89/react-howler.svg)](https://travis-ci.org/thangngoc89/react-howler)
