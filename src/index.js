@@ -1,2 +1,2 @@
-module.exports = require('./ReactHowler')
+module.exports = require('./ReactHowler').default
 exports.Howler = require('howler').Howler
