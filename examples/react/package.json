@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js --watch --progress --color --hot --port 3000",
-    "build": "webpack --config webpack.config.prod.js"
+    "build": "NODE_ENV=production webpack --config webpack.config.prod.js"
   },
   "author": "Khoa Nguyen",
   "license": "MIT",
