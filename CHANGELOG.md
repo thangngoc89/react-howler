@@ -1,3 +1,7 @@
+# 1.0.2 - 2016-02-05
+
+- Changed: Fixed CommonJS require style
+
 # 1.0.1 - 2016-02-05
 
 - Changed: Remove babel tranform runtime plugin
