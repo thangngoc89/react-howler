@@ -1,5 +1,2 @@
-import ReactHowler from './ReactHowler'
-export default ReactHowler
-
-// Export Howler instance
-export { Howler } from 'howler'
+module.exports = require('./ReactHowler')
+exports.Howler = require('howler').Howler

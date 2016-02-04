@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/thangngoc89/react-howler#readme",
   "dependencies": {
-    "howler": "git+https://github.com/goldfire/howler.js.git#v2.0.0-beta6"
+    "howler": "git+https://github.com/goldfire/howler.js.git#v2.0.0-beta7"
   },
   "peerDependencies": {
     "react": "^0.14.x",
