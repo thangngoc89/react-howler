@@ -9,6 +9,7 @@
     "start": "webpack-dev-server --config webpack.config.js --watch --hot --progress --color",
     "lint": "standard",
     "build": "babel src -d lib",
+    "example:react": "cd examples/react && npm install && npm run build",
     "prepublish": "npm run lint && npm run build",
     "postpublish": "npm run clean",
     "version": "auto-changelog --package; git add CHANGELOG.md",
