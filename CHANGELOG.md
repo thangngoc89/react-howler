@@ -1,3 +1,5 @@
+# 2.0.0 - 2016-02-06
+
 - Changed: Don't export Howler global instance, consume it
 directly from window object due to complication in
 ES6/CommonJS module
