@@ -6,7 +6,8 @@
   "scripts": {
     "prebabelify": "rimraf lib",
     "babelify": "babel src -d lib",
-    "example:react": "npm run babelify && cd examples/react && npm install && npm run build",
+    "example:react": "npm run babelify && cd examples/react && npm install && npm run start",
+    "example:react:build": "npm run babelify && cd examples/react && npm install && npm run build",
     "deploy": "babel-node bin/deploy-gh-pages",
     "prepublish": "npm run lint && npm run babelify",
     "lint": "standard",

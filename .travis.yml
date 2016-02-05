@@ -5,7 +5,7 @@ node_js:
   - 5
 script:
   - npm run babelify
-  - npm run example:react
+  - npm run example:react:build
 
 before_deploy:
   - git config --global user.name "Khoa Nguyen"
