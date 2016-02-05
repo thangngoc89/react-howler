@@ -4,6 +4,5 @@ node_js:
   - 4
   - 5
 script:
-  - npm run test
-  - npm run build
+  - npm run babelify
   - npm run example:react

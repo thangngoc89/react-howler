@@ -146,9 +146,7 @@ class ReactHowler extends Component {
    * Only render a placeholder
    */
   render () {
-    return (
-      <div />
-    )
+    return React.createElement('div', null)
   }
 }
 

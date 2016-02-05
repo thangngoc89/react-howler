@@ -1,3 +1,6 @@
+- Changed: Remove unneeded devDependencies
+- Changed: Consolidate example build config
+
 # 1.0.2 - 2016-02-05
 
 - Changed: Fixed CommonJS require style
