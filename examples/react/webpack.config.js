@@ -23,7 +23,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      'react-howler': path.join(__dirname, '../../src/index.js'),
+      'react-howler': path.join(__dirname, '../../lib/index.js'),
       'sound.ogg': path.join(__dirname, '../../test/stubs/sound.ogg')
     },
     extensions: ['', '.js']
@@ -33,13 +33,19 @@ module.exports = {
       {
         test: /\.js?$/,
         loader: 'standard',
+        include: [
+          __dirname
+        ],
         exclude: /node_modules/
       }
     ],
     loaders: [
       {
         test: /\.js?$/,
-        loader: 'babel',
+        loader: 'babel-loader',
+        include: [
+          __dirname
+        ],
         exclude: /node_modules/,
         query: {
           cacheDirectory: true

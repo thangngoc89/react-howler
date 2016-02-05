@@ -4,17 +4,12 @@
   "description": "A React.js wrapper for howler.js (audio player)",
   "main": "lib/index.js",
   "scripts": {
-    "coverage": "babel-node node_modules/.bin/babel-istanbul cover _mocha",
-    "clean": "rimraf lib",
-    "start": "webpack-dev-server --config webpack.config.js --watch --hot --progress --color",
+    "prebabelify": "rimraf lib",
+    "babelify": "babel src -d lib",
+    "example:react": "npm run babelify && cd examples/react && npm install && npm run build",
+    "prepublish": "npm run lint && npm run babelify",
     "lint": "standard",
-    "build": "babel src -d lib",
-    "example:react": "cd examples/react && npm install && npm run build",
-    "prepublish": "npm run lint && npm run build",
-    "postpublish": "npm run clean",
-    "version": "auto-changelog --package; git add CHANGELOG.md",
-    "test": "mocha test --compilers js:babel-core/register --recursive",
-    "test:watch": "npm test -- --watch"
+    "test": "echo \"Error: no test specified\""
   },
   "repository": {
     "type": "git",
@@ -39,28 +34,17 @@
     "howler": "git+https://github.com/goldfire/howler.js.git#v2.0.0-beta7"
   },
   "peerDependencies": {
-    "react": "^0.14.x",
-    "react-dom": "^0.14.x"
+    "react": ">=0.14.0",
+    "react-dom": ">=0.14.0"
   },
   "devDependencies": {
-    "auto-changelog": "^0.2.2",
     "babel-cli": "^6.4.0",
     "babel-core": "^6.4.0",
-    "babel-istanbul": "^0.6.0",
-    "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "babel-preset-react-hmre": "^1.0.1",
     "babel-preset-stage-0": "^6.3.13",
-    "chai": "^3.4.1",
-    "mocha": "^2.3.4",
-    "react": "^0.14.6",
-    "react-addons-test-utils": "^0.14.6",
-    "react-dom": "^0.14.6",
-    "rimraf": "^2.5.0",
-    "standard": "^5.4.1",
-    "standard-loader": "^2.0.0",
-    "webpack": "^1.12.10",
-    "webpack-dev-server": "^1.14.0"
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "rimraf": "^2.5.1",
+    "standard": "^5.4.1"
   }
 }
