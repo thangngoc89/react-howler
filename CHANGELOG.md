@@ -1,3 +1,7 @@
+- Changed: Don't export Howler global instance, consume it
+directly from window object due to complication in
+ES6/CommonJS module
+- Changed: Use babel stage 2 instead of stage 0
 - Changed: Remove unneeded devDependencies
 - Changed: Consolidate example build config
 
