@@ -1,6 +1,5 @@
 import React from 'react'
 import { OnlyPlayPauseButton, AutoPlay, FullControl } from './players'
-import { Howler } from 'react-howler'
 
 class App extends React.Component {
   render () {
@@ -8,7 +7,7 @@ class App extends React.Component {
       <div>
         <section>
           <h1>Global Howler object</h1>
-          <p>usingWebAudio: {(Howler.usingWebAudio) ? 'true' : 'false'}</p>
+          <p>usingWebAudio: {(window.Howler.usingWebAudio) ? 'true' : 'false'}</p>
           <hr />
         </section>
         <section>

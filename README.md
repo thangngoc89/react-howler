@@ -106,15 +106,13 @@ class App extends Component {
 
 # Howler global core method
 
-I exported Howler for control global state.
+Howler global methods is avaiable in window scope.
 Please refer to [howler's documentation](https://github.com/goldfire/howler.js/tree/2.0#global-core-methods)
 
 Usage:
 
 ```js
-import { Howler } from 'react-howler'
-
-Howler.mute(true) // Mute all sounds
+window.Howler.mute(true) // Mute all sounds
 ```
 
 # Linting
