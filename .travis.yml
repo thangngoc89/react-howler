@@ -6,3 +6,19 @@ node_js:
 script:
   - npm run babelify
   - npm run example:react
+
+before_deploy:
+  - git config --global user.name "Khoa Nguyen"
+  - git config --global user.email "hi@khoanguyen.me"
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: npm run deploy
+  on:
+    branch: master
+    node: '5'
+
+env:
+  global:
+    - secure: BaIa+0lvOBAzcCcuAJWb9zUdGhcwt2XcjfL7bclRfclpEPgpBK2vRkx6pwWcTDFbhIWAOvkq3SFNWCkidL+cjFWWtNF7igNWNxGCeKWfcU+tB5KLmcZ19T9wsdX6v90AtxGrkjMv8DJ6hI/+7rRisE7rfB9AeBVMGegnLporvvUaqm+kN1SmIRrEq7/yjKgHCRwZEe+J7GVerFwD/VWdTj+wxrvdql4ozkgiI6NC6APZIugj+GV8xZKPbI/i1y3mJhyhOui7xC19d8/s7zUs+CG4UlBVpLbsdpX5z39E/c6RLCYR7J9VRCH+1UlV+gtIq8oTKALsdl3otYLV7JPp0zXx78U1QLcpIdnONBctZdUD4Hba50+tIjOZL44wkkp0Gf7UBX/0bl1d+MwbP5y3vEezBHKfL6ic1/tI0fh2Y9xdIZCQWgKe9h02o868N0iYR2rWPJ6miJIso1Sgzze42MSokm9ssDbCxmeNVjtetaFoqvs561sZG0WZ3gsAu+YOq4v4PKdopdiiuTMzQXamzNww8IcA+tFtttCO0Bg3NnMq8PmkKBK+tggdc3YBpbb8rXjxN5kOVSPL4CPJ7tGlUvIs9xfevf+suTDQRz5tfieWJh0GJ47JZ/49vGqqsIbQDr1UPKXUwC60BNi1KUeuoE3aWbeebhZtw7oUotLZajg=

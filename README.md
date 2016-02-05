@@ -43,11 +43,13 @@ For a full working example please see it in  [App.js](https://github.com/thangng
 
 # Demo
 
+[http://khoanguyen.me/react-howler/](http://khoanguyen.me/react-howler/)
+or
+
 ```shell
 git clone http://github.com/thangngoc89/react-howler
-cd react-howler/examples/react
 npm install
-npm start
+npm run example:react
 open http://localhost:3000
 ```
 
