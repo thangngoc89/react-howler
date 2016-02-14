@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Howl } from 'howler'
+import { Howl } from './howler'
 import { noop, runIfSet } from './utils'
 
 class ReactHowler extends Component {
@@ -27,17 +27,19 @@ class ReactHowler extends Component {
    */
   initHowler (props = this.props) {
     this.destroyHowler()
-    this.howler = new Howl({
-      src: props.src,
-      autoplay: props.playing,
-      mute: props.mute,
-      loop: props.loop,
-      onend: props.onEnd,
-      onplay: props.onPlay,
-      onpause: props.onPause,
-      onload: props.onLoad,
-      onloaderror: props.onLoadError
-    })
+    if (typeof Howl !== 'undefined') { // Check if window is available
+      this.howler = new Howl({
+        src: props.src,
+        autoplay: props.playing,
+        mute: props.mute,
+        loop: props.loop,
+        onend: props.onEnd,
+        onplay: props.onPlay,
+        onpause: props.onPause,
+        onload: props.onLoad,
+        onloaderror: props.onLoadError
+      })
+    }
   }
 
   /**
