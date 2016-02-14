@@ -27,7 +27,7 @@ class ReactHowler extends Component {
    */
   initHowler (props = this.props) {
     this.destroyHowler()
-    if ( typeof Howl !== 'undefined' ) { // Check if window is available 
+    if (typeof Howl !== 'undefined') { // Check if window is available
       this.howler = new Howl({
         src: props.src,
         autoplay: props.playing,
