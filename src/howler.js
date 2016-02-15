@@ -1,4 +1,4 @@
-var Howler
+let Howler
 
 if (typeof window !== 'undefined') {
   Howler = require('howler')
