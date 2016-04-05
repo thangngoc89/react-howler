@@ -1,6 +1,6 @@
 {
   "name": "react-howler",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A React.js wrapper for howler.js (audio player)",
   "main": "lib/index.js",
   "scripts": {
