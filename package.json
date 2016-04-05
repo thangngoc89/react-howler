@@ -1,6 +1,6 @@
 {
   "name": "react-howler",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A React.js wrapper for howler.js (audio player)",
   "main": "lib/index.js",
   "scripts": {
@@ -13,6 +13,9 @@
     "lint": "standard",
     "test": "echo \"Error: no test specified\""
   },
+  "files": [
+    "lib/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thangngoc89/react-howler.git"
