@@ -97,11 +97,11 @@ class App extends Component {
   }
   // This sound file may not work due to cross-origin setting
   render () {
-    <ReactHowler
+    return(<ReactHowler
       src='http://goldfirestudios.com/proj/howlerjs/sound.ogg'
       playing={true}
       ref={(ref) => this.audio = ref}
-    />
+    />);
   }
 }
 ```
