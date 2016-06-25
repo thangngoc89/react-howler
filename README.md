@@ -31,10 +31,12 @@ import ReactHowler from 'react-howler'
 class App extends Component {
   // This sound file may not work due to cross-origin setting
   render () {
-    <ReactHowler
-      src='http://goldfirestudios.com/proj/howlerjs/sound.ogg'
-      playing={true}
-    />
+    return (
+      <ReactHowler
+        src='http://goldfirestudios.com/proj/howlerjs/sound.ogg'
+        playing={true}
+      />
+    )
   }
 }
 ```
@@ -97,11 +99,13 @@ class App extends Component {
   }
   // This sound file may not work due to cross-origin setting
   render () {
-    return(<ReactHowler
-      src='http://goldfirestudios.com/proj/howlerjs/sound.ogg'
-      playing={true}
-      ref={(ref) => this.audio = ref}
-    />);
+    return(
+      <ReactHowler
+        src='http://goldfirestudios.com/proj/howlerjs/sound.ogg'
+        playing={true}
+        ref={(ref) => this.audio = ref}
+      />
+    );
   }
 }
 ```
