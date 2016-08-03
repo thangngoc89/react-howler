@@ -126,7 +126,7 @@ class ReactHowler extends Component {
       return 0
     }
 
-    if (!pos) {
+    if (!pos && pos !== 0) {
       return this.howler.seek()
     }
 
