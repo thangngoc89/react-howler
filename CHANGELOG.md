@@ -1,3 +1,8 @@
+# 3.1.0 - 2016-08-28
+
+- Fixed #13: Don't call toggleHowler when initializing or changing src
+- Changed: Upgrade Howler.js dependency from 2.0.0-beta10 to 2.0.0
+
 # 2.0.0 - 2016-02-06
 
 - Changed: Don't export Howler global instance, consume it
