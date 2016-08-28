@@ -13,11 +13,7 @@ Props can be passed to control playback and react to events such as end, load, p
 
 # howler.js
 
-[howler.js](https://github.com/goldfire/howler.js/tree/2.0) is an audio library for the modern web. It defaults to Web Audio API and falls back to HTML5 Audio.
-
-Currently, I'm tracking branch 2.0 beta because
-
->  the core is fairly stable and is already under heavy production use.
+[howler.js](https://github.com/goldfire/howler.js/) is an audio library for the modern web. It defaults to Web Audio API and falls back to HTML5 Audio.
 
 
 # Usage
