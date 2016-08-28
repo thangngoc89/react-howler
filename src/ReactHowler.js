@@ -15,8 +15,9 @@ class ReactHowler extends Component {
   componentWillReceiveProps (props) {
     if (props.src !== this.props.src) {
       this.initHowler(props)
+    } else {
+      this.toggleHowler(props)
     }
-    this.toggleHowler(props)
   }
 
   componentWillUnmount () {
