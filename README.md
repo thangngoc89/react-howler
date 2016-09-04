@@ -56,24 +56,35 @@ open http://localhost:3000
 Prop      | Default | Description
 ----      | ------- | -----------
 src       |         | The src of songs for playing. Can be a string or an array
-playing   | true    | Set to `true` or `false` to pause or play the media. This also invoke autoplay on initial load
+playing   | true    | Set to `true` or `false` to pause or play the media. This also invokes autoplay on initial load
 loop      | false   | Set to `true` or `false` to enable/disable loop
 mute      | false   | Set to `true` or `false` to mute/unmute current audio
 volume    | 1.0     | The volume of the specific howl, from `0.0` to `1.0`
 onPlay    | noop    | Called when audio starts or resumes playing
 onPause   | noop    | Called when audio is paused
 onVolume  | noop    | Called when volume is changed
+onStop    | noop    | Called when audio is stopped
 onLoad    | noop    | Called when audio is loaded (buffered)
 onLoadError | noop  | Called when an error occurs whilst attempting to load media
 onEnd     |  noop   | Called when media finishes playing
 
 # Methods
 
-- seek(pos? : Number) Set/get current position of player
-- duration: Get duration of current audio file
+#### duration([id])
+Get the duration of the audio source. Will return 0 until after the `load` event fires.
+* **id**: `Number` `optional` The sound ID to check. Passing an ID will return the duration of the sprite being played on this instance; otherwise, the full source duration is returned.
 
-I only wrapper methods that I need. If you need to use undocumented methods,
-you can access howler instance directly via `howler` method
+#### seek([seek])
+Get/set the position of playback for a sound.
+* **seek**: `Number` `optional` The position to move current playback to (in seconds).
+
+#### stop([id])
+Stops playback of sound, resetting `seek` to `0`.
+* **id**: `Number` `optional` The sound ID. If none is passed, all sounds in group are stopped.
+
+#### Other howler.js methods
+If you need to use other howler.js [methods](https://github.com/goldfire/howler.js#methods)
+that are not included in this wrapper you can access the howler instance directly via `howler`
 
 ```javascript
 import React, { Component } from 'react'
@@ -108,10 +119,10 @@ class App extends Component {
 }
 ```
 
-# Howler global core method
+# Howler global core methods
 
-Howler global methods is avaiable in window scope.
-Please refer to [howler's documentation](https://github.com/goldfire/howler.js/tree/2.0#global-core-methods)
+Howler global methods are avaiable in window scope.
+Please refer to [howler's documentation](https://github.com/goldfire/howler.js#global-methods)
 
 Usage:
 
@@ -131,7 +142,7 @@ npm run lint
 
 # Audio file in examples
 
-I take it from [howler.js demo page](http://goldfirestudios.com/blog/104/howler.js-Modern-Web-Audio-Javascript-Library)
+Taken from [howler.js demo page](http://goldfirestudios.com/blog/104/howler.js-Modern-Web-Audio-Javascript-Library)
 
 Sound file direct link: [sound.ogg](http://goldfirestudios.com/proj/howlerjs/sound.ogg)
 

@@ -39,6 +39,7 @@ class ReactHowler extends Component {
         onplay: props.onPlay,
         onpause: props.onPause,
         onvolume: props.onVolume,
+        onstop: props.onStop,
         onload: props.onLoad,
         onloaderror: props.onLoadError
       })
@@ -102,6 +103,19 @@ class ReactHowler extends Component {
       this.howler.pause(id)
     } else {
       this.howler.pause()
+    }
+  }
+
+  /**
+   * Stops playback of sound or group
+   * If no id given, stops all playback
+   * @param {Number} id = undefined [sound of group to pause]
+   */
+  stop (id = undefined) {
+    if (id) {
+      this.howler.stop(id)
+    } else {
+      this.howler.stop()
     }
   }
 
@@ -181,6 +195,7 @@ ReactHowler.propTypes = {
   onPause: PropTypes.func,
   onPlay: PropTypes.func,
   onVolume: PropTypes.func,
+  onStop: PropTypes.func,
   onLoad: PropTypes.func,
   onLoadError: PropTypes.func
 }
@@ -194,6 +209,7 @@ ReactHowler.defaultProps = {
   onPause: noop,
   onPlay: noop,
   onVolume: noop,
+  onStop: noop,
   onLoad: noop,
   onLoadError: noop
 }
