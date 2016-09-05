@@ -11,7 +11,8 @@ class AutoPlay extends React.Component {
       playing: false,
       loaded: false,
       loop: false,
-      mute: false
+      mute: false,
+      volume: 1.0
     }
     this.handleToggle = this.handleToggle.bind(this)
     this.handleOnLoad = this.handleOnLoad.bind(this)
@@ -89,6 +90,7 @@ class AutoPlay extends React.Component {
           onEnd={this.handleOnEnd}
           loop={this.state.loop}
           mute={this.state.mute}
+          volume={this.state.volume}
           ref={(ref) => this.player = ref}
         />
         <button onClick={this.handleToggle}>
@@ -117,6 +119,20 @@ class AutoPlay extends React.Component {
               onChange={this.handleMuteToggle}
             />
         </label>
+        <div>
+          <label>
+            <input
+              type='range'
+              min='0'
+              max='1'
+              step='.05'
+              value={this.state.volume}
+              onChange={e => this.setState({volume: parseFloat(e.target.value)})}
+            />
+            <br /> Volume: {this.state.volume}
+          </label>
+        </div>
+
       </div>
     )
   }

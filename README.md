@@ -59,8 +59,10 @@ src       |         | The src of songs for playing. Can be a string or an array
 playing   | true    | Set to `true` or `false` to pause or play the media. This also invoke autoplay on initial load
 loop      | false   | Set to `true` or `false` to enable/disable loop
 mute      | false   | Set to `true` or `false` to mute/unmute current audio
+volume    | 1.0     | The volume of the specific howl, from `0.0` to `1.0`
 onPlay    | noop    | Called when audio starts or resumes playing
 onPause   | noop    | Called when audio is paused
+onVolume  | noop    | Called when volume is changed
 onLoad    | noop    | Called when audio is loaded (buffered)
 onLoadError | noop  | Called when an error occurs whilst attempting to load media
 onEnd     |  noop   | Called when media finishes playing
