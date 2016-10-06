@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Howl } from './howler'
-import { noop, runIfSet } from './utils'
+import { noop } from './utils'
 
 class ReactHowler extends Component {
   constructor (props) {
@@ -57,8 +57,8 @@ class ReactHowler extends Component {
 
   toggleHowler (props) {
     (props.playing) ? this.play() : this.pause()
-    runIfSet(props.mute, this.mute(props.mute))
-    runIfSet(props.loop, this.loop(props.loop))
+    this.mute(props.mute)
+    this.loop(props.loop)
 
     if (props.seek !== this.seek()) {
       this.seek(props.seek)
