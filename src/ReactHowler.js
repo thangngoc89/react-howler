@@ -34,9 +34,12 @@ class ReactHowler extends Component {
         autoplay: props.playing,
         mute: props.mute,
         loop: props.loop,
+        volume: props.volume,
         onend: props.onEnd,
         onplay: props.onPlay,
         onpause: props.onPause,
+        onvolume: props.onVolume,
+        onstop: props.onStop,
         onload: props.onLoad,
         onloaderror: props.onLoadError
       })
@@ -59,6 +62,10 @@ class ReactHowler extends Component {
     (props.playing) ? this.play() : this.pause()
     this.mute(props.mute)
     this.loop(props.loop)
+
+    if (props.volume !== this.props.volume) {
+      this.volume(props.volume)
+    }
 
     if (props.seek !== this.seek()) {
       this.seek(props.seek)
@@ -100,12 +107,34 @@ class ReactHowler extends Component {
   }
 
   /**
+   * Stops playback of sound or group
+   * If no id given, stops all playback
+   * @param {Number} id = undefined [sound of group to pause]
+   */
+  stop (id = undefined) {
+    if (id) {
+      this.howler.stop(id)
+    } else {
+      this.howler.stop()
+    }
+  }
+
+  /**
    * Mutes the sound, but doesn't pause the playback.
    * @param {Boolean} [muted] [True to mute and false to unmute]
    * @param {Number} [id] [The sound ID. If none is passed, all sounds in group are muted]
    */
   mute (...args) {
     this.howler.mute(...args)
+  }
+
+  /**
+   * Get/set volume of this sound or the group. This method optionally takes 0, 1 or 2 arguments.
+   * @param {Number} [volume] [Volume from 0.0 to 1.0]
+   * @param {Number} [id] [The sound ID. If none is passed, all sounds in group are muted]
+   */
+  volume (...args) {
+    return this.howler.volume(...args)
   }
 
   /**
@@ -161,9 +190,12 @@ ReactHowler.propTypes = {
   playing: PropTypes.bool,
   mute: PropTypes.bool,
   loop: PropTypes.bool,
+  volume: PropTypes.number,
   onEnd: PropTypes.func,
   onPause: PropTypes.func,
   onPlay: PropTypes.func,
+  onVolume: PropTypes.func,
+  onStop: PropTypes.func,
   onLoad: PropTypes.func,
   onLoadError: PropTypes.func
 }
@@ -172,9 +204,12 @@ ReactHowler.defaultProps = {
   playing: true, // Enable autoplay by default
   mute: false,
   loop: false,
+  volume: 1.0,
   onEnd: noop,
   onPause: noop,
   onPlay: noop,
+  onVolume: noop,
+  onStop: noop,
   onLoad: noop,
   onLoadError: noop
 }

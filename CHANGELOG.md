@@ -1,3 +1,8 @@
+# 3.2.0 - 2016-10-17
+
+- Added: Support for `volume` prop and `onVolume` callback
+- Added: Support for `stop()` method and `onStop` callback
+
 # 3.1.0 - 2016-08-28
 
 - Fixed #13: Don't call toggleHowler when initializing or changing src
