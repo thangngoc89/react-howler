@@ -1,4 +1,4 @@
-# 3.2.0 - **Pending**
+# 3.2.0 - 2016-10-17
 
 - Added: Support for `volume` prop and `onVolume` callback
 - Added: Support for `stop()` method and `onStop` callback
