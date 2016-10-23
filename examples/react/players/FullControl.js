@@ -100,10 +100,10 @@ class AutoPlay extends React.Component {
           loop={this.state.loop}
           mute={this.state.mute}
           volume={this.state.volume}
-          ref={(ref) => this.player = ref}
+          ref={(ref) => (this.player = ref)}
         />
         <button onClick={this.handleToggle}>
-          {(this.state.playing) ? 'Pause' : 'Play' }
+          {(this.state.playing) ? 'Pause' : 'Play'}
         </button>
         <button onClick={this.handleStop}>
           Stop
@@ -117,19 +117,19 @@ class AutoPlay extends React.Component {
         </p>
         <label>
           Loop:
-            <input
-              type='checkbox'
-              checked={this.state.loop}
-              onChange={this.handleLoopToggle}
-            />
+          <input
+            type='checkbox'
+            checked={this.state.loop}
+            onChange={this.handleLoopToggle}
+          />
         </label>
         <label>
           Mute:
-            <input
-              type='checkbox'
-              checked={this.state.mute}
-              onChange={this.handleMuteToggle}
-            />
+          <input
+            type='checkbox'
+            checked={this.state.mute}
+            onChange={this.handleMuteToggle}
+          />
         </label>
         <div>
           <label>
