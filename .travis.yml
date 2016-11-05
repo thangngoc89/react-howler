@@ -4,6 +4,19 @@ node_js:
   - 4
   - 5
   - 6
+cache:
+  directories:
+    - $HOME/.npm
+    - $HOME/.yarn-cache
+    - node_modules
+
+before_install:
+  - npm install -g npm
+  - npm install -g yarn --cache-min 999999999
+
+install:
+  - yarn install
+
 script:
   - npm run babelify
   - npm run example:react:build
