@@ -1,13 +1,12 @@
-import Audio from 'react-howler'
 import React from 'react'
-import sound from 'sound.ogg'
+import ReactHowler from 'ReactHowler'
 
-class OnlyPlayPauseButton extends React.Component {
+class AutoPlay extends React.Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      playing: false
+      playing: true
     }
     this.handlePlay = this.handlePlay.bind(this)
     this.handlePause = this.handlePause.bind(this)
@@ -28,8 +27,8 @@ class OnlyPlayPauseButton extends React.Component {
   render () {
     return (
       <div>
-        <Audio
-          src={sound}
+        <ReactHowler
+          src='sound.ogg'
           playing={this.state.playing}
         />
         <button onClick={this.handlePlay}>Play</button>
@@ -39,4 +38,4 @@ class OnlyPlayPauseButton extends React.Component {
   }
 }
 
-export default OnlyPlayPauseButton
+export default AutoPlay
