@@ -16,6 +16,11 @@
   "files": [
     "lib/*"
   ],
+  "standard": {
+    "ignore": [
+      "examples/react/build/"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thangngoc89/react-howler.git"
