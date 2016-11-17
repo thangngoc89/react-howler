@@ -1,6 +1,5 @@
-import Audio from 'react-howler'
 import React from 'react'
-import sound from 'sound.ogg'
+import ReactHowler from 'ReactHowler'
 import raf from 'raf' // requestAnimationFrame polyfill
 
 class AutoPlay extends React.Component {
@@ -91,8 +90,8 @@ class AutoPlay extends React.Component {
   render () {
     return (
       <div>
-        <Audio
-          src={sound}
+        <ReactHowler
+          src='sound.ogg'
           playing={this.state.playing}
           onLoad={this.handleOnLoad}
           onPlay={this.handleOnPlay}
