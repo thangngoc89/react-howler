@@ -31,7 +31,6 @@ class ReactHowler extends Component {
     if (typeof Howl !== 'undefined') { // Check if window is available
       this.howler = new Howl({
         src: props.src,
-        autoplay: props.playing,
         mute: props.mute,
         loop: props.loop,
         volume: props.volume,
@@ -43,6 +42,10 @@ class ReactHowler extends Component {
         onload: props.onLoad,
         onloaderror: props.onLoadError
       })
+
+      if (props.playing) {
+        this.play();
+      }
     }
   }
 
