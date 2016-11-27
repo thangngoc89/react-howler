@@ -1,3 +1,11 @@
+# 3.3.0 - 2016-11-27
+
+- Added: Use [Yarn](https://yarnpkg.com/) (#17)
+- Changed: Update to work with nodejs v6 (#18)
+- Changed Example: Simplified example build by using [create-react-app](https://github.com/facebookincubator/create-react-app) (#20,#21)
+- Changed: Fixed `autoplay` ignoring `pause()` calls while audio is loading (#22)
+
+
 # 3.2.0 - 2016-10-17
 
 - Added: Support for `volume` prop and `onVolume` callback
