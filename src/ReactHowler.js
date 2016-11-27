@@ -44,7 +44,7 @@ class ReactHowler extends Component {
       })
 
       if (props.playing) {
-        this.play();
+        this.play()
       }
     }
   }
