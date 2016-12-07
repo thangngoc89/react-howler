@@ -31,6 +31,7 @@ class ReactHowler extends Component {
     if (typeof Howl !== 'undefined') { // Check if window is available
       this.howler = new Howl({
         src: props.src,
+        format: props.format,
         mute: props.mute,
         loop: props.loop,
         volume: props.volume,
@@ -190,6 +191,7 @@ ReactHowler.propTypes = {
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string)
   ]).isRequired,
+  format: PropTypes.string,
   playing: PropTypes.bool,
   mute: PropTypes.bool,
   loop: PropTypes.bool,
