@@ -1,3 +1,8 @@
+# 3.4.0 - 2016-12-08
+
+- Added: `format` option (#23)
+
+
 # 3.3.0 - 2016-11-27
 
 - Added: Use [Yarn](https://yarnpkg.com/) (#17)
