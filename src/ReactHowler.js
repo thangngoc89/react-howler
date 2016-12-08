@@ -191,7 +191,7 @@ ReactHowler.propTypes = {
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string)
   ]).isRequired,
-  format: PropTypes.string,
+  format: PropTypes.arrayOf(PropTypes.string),
   playing: PropTypes.bool,
   mute: PropTypes.bool,
   loop: PropTypes.bool,
@@ -207,6 +207,7 @@ ReactHowler.propTypes = {
 
 ReactHowler.defaultProps = {
   playing: true, // Enable autoplay by default
+  format: [],
   mute: false,
   loop: false,
   volume: 1.0,
