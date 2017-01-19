@@ -1,3 +1,8 @@
+# 3.4.1 - 2017-01-19
+
+- Updated: Dependency versions
+
+
 # 3.4.0 - 2016-12-08
 
 - Added: `format` option (#23)
@@ -36,7 +41,7 @@ ES6/CommonJS module
 
 # 1.0.1 - 2016-02-05
 
-- Changed: Remove babel tranform runtime plugin
+- Changed: Remove babel transform runtime plugin
 
 # 1.0.0 - 2016-02-05
 
