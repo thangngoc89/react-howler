@@ -1,3 +1,9 @@
+# 3.5.0 - 2017-02-04
+
+- Added: `html5` option (#26)
+- Updated: Use latest version of Yarn
+
+
 # 3.4.1 - 2017-01-19
 
 - Updated: Dependency versions

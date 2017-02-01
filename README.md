@@ -60,6 +60,7 @@ playing   | true    | Set to `true` or `false` to pause or play the media.<br>Se
 loop      | false   | Set to `true` or `false` to enable/disable loop
 mute      | false   | Set to `true` or `false` to mute/unmute current audio
 volume    | 1.0     | The volume of the specific howl, from `0.0` to `1.0`
+html5     | false   | Set to `true` to force HTML5 Audio. This should be used for large audio files so that you don't have to wait for the full file to be downloaded and decoded before playing.
 format    | []      | howler.js automatically detects your file format from the extension, but you may also specify a format in situations where extraction won't work (such as with a SoundCloud stream).
 onPlay    | noop    | Called when audio starts or resumes playing
 onPause   | noop    | Called when audio is paused
