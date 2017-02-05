@@ -1,3 +1,8 @@
+# 3.5.1 - 2017-02-05
+
+- Updated: Remove Yarn from devDependencies - it's recommended to install globally so having it  as a devDep is redundant.
+
+
 # 3.5.0 - 2017-02-04
 
 - Added: `html5` option (#26)
