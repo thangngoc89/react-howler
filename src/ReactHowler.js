@@ -34,6 +34,7 @@ class ReactHowler extends Component {
         format: props.format,
         mute: props.mute,
         loop: props.loop,
+        preload: props.preload,
         volume: props.volume,
         onend: props.onEnd,
         onplay: props.onPlay,
@@ -211,6 +212,7 @@ ReactHowler.defaultProps = {
   playing: true, // Enable autoplay by default
   format: [],
   mute: false,
+  preload: false,
   loop: false,
   volume: 1.0,
   onEnd: noop,
