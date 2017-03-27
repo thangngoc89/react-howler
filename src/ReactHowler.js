@@ -181,6 +181,13 @@ class ReactHowler extends Component {
   }
 
   /**
+   * load audio file
+   */
+  load () {
+    this.howler.load()
+  } 
+
+  /**
    * Only render a placeholder
    */
   render () {
@@ -212,7 +219,7 @@ ReactHowler.defaultProps = {
   playing: true, // Enable autoplay by default
   format: [],
   mute: false,
-  preload: false,
+  preload: true,
   loop: false,
   volume: 1.0,
   onEnd: noop,
