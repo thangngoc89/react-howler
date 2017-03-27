@@ -185,7 +185,7 @@ class ReactHowler extends Component {
    */
   load () {
     this.howler.load()
-  } 
+  }
 
   /**
    * Only render a placeholder
@@ -204,6 +204,7 @@ ReactHowler.propTypes = {
   playing: PropTypes.bool,
   mute: PropTypes.bool,
   loop: PropTypes.bool,
+  preload: PropTypes.bool,
   volume: PropTypes.number,
   onEnd: PropTypes.func,
   onPause: PropTypes.func,

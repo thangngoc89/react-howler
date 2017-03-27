@@ -56,6 +56,7 @@ open http://localhost:3000
 Prop      | Default | Description
 ----      | ------- | -----------
 src       |         | The src of songs for playing. Can be a string or an array
+preload   | true    | Automatically begin downloading the audio file when the Howl is defined.
 playing   | true    | Set to `true` or `false` to pause or play the media.<br>Setting to `true` on initial load will play the audio immediately after it is loaded
 loop      | false   | Set to `true` or `false` to enable/disable loop
 mute      | false   | Set to `true` or `false` to mute/unmute current audio
