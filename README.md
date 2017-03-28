@@ -55,8 +55,8 @@ open http://localhost:3000
 
 Prop      | Default | Description
 ----      | ------- | -----------
-src       |         | The src of songs for playing. Can be a string or an array
-preload   | true    | Automatically begin downloading the audio file when the Howl is defined.
+src       |         | The src of audio for playing. Can be a string or an array
+preload   | true    | Automatically begin downloading the audio file when the react-howler is initiated.
 playing   | true    | Set to `true` or `false` to pause or play the media.<br>Setting to `true` on initial load will play the audio immediately after it is loaded
 loop      | false   | Set to `true` or `false` to enable/disable loop
 mute      | false   | Set to `true` or `false` to mute/unmute current audio
@@ -105,19 +105,19 @@ import ReactHowler from 'react-howler'
 
 class App extends Component {
   getHower () {
-    this.audio.howler
+    this.player.howler
   }
 
   getDuration () {
-    this.audio.duration()
+    this.player.duration()
   }
 
   getSeek () {
-    this.audio.seek()
+    this.player.seek()
   }
 
   setSeek () {
-    this.audio.seek(0.5)
+    this.player.seek(0.5)
   }
   // This sound file may not work due to cross-origin setting
   render () {
@@ -125,7 +125,7 @@ class App extends Component {
       <ReactHowler
         src='http://goldfirestudios.com/proj/howlerjs/sound.ogg'
         playing={true}
-        ref={(ref) => this.audio = ref}
+        ref={(ref) => (this.player = ref)}
       />
     );
   }
