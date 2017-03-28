@@ -1,3 +1,10 @@
+# 3.6.0 - 2017-03-27
+
+- Added: `preload` prop (#27)
+- Added: `load()` method
+- Added:  `howlerState()` method
+
+
 # 3.5.1 - 2017-02-05
 
 - Updated: Remove Yarn from devDependencies - it's recommended to install globally so having it  as a devDep is redundant.

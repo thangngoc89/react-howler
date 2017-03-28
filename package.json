@@ -1,6 +1,6 @@
 {
   "name": "react-howler",
-  "version": "3.5.1",
+  "version": "3.6.0",
   "description": "A React.js wrapper for howler.js (audio player)",
   "main": "lib/index.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "deploy": "babel-node bin/deploy-gh-pages",
     "prepublish": "npm run lint && npm run babelify",
     "lint": "standard",
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Error: no test specified\"",
+    "release": "npmpub"
   },
   "files": [
     "lib/*"
