@@ -56,6 +56,7 @@ open http://localhost:3000
 Prop      | Default | Description
 ----      | ------- | -----------
 src       |         | The src of songs for playing. Can be a string or an array
+preload   | true    | Automatically begin downloading the audio file when the Howl is defined.
 playing   | true    | Set to `true` or `false` to pause or play the media.<br>Setting to `true` on initial load will play the audio immediately after it is loaded
 loop      | false   | Set to `true` or `false` to enable/disable loop
 mute      | false   | Set to `true` or `false` to mute/unmute current audio
@@ -76,9 +77,19 @@ onEnd     |  noop   | Called when media finishes playing
 Get the duration of the audio source. Will return 0 until after the `load` event fires.
 * **id**: `Number` `optional` The sound ID to check. Passing an ID will return the duration of the sprite being played on this instance; otherwise, the full source duration is returned.
 
+#### load()
+When `preload` is `true` this is automatically called. When setting `preload` to `false`, you can call `load()` manually before playing sounds (useful for lazy loading large files on slow networks). If you attempt to play a sound that's not loading or loaded with preload react-howler will automatically call `load()`.
+
+*Tip*: If you're calling `load()` manually, check the load status with `howlerState()`
+
 #### seek([seek])
 Get/set the position of playback for a sound.
 * **seek**: `Number` `optional` The position to move current playback to (in seconds).
+
+#### howlerState()
+Check the load status of the `Howl`, returns a string `unloaded`, `loading` or `loaded`.
+
+*This is an alias for Howler's `state()` function*
 
 #### stop([id])
 Stops playback of sound, resetting `seek` to `0`.

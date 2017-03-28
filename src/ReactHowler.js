@@ -34,6 +34,7 @@ class ReactHowler extends Component {
         format: props.format,
         mute: props.mute,
         loop: props.loop,
+        preload: props.preload,
         volume: props.volume,
         onend: props.onEnd,
         onplay: props.onPlay,
@@ -94,6 +95,12 @@ class ReactHowler extends Component {
     const playing = this.howler.playing()
 
     if (!playing) {
+      // Automatically load if we're trying to play
+      // and the howl is not loaded
+      if (this.howlerState() === 'unloaded') {
+        this.load()
+      }
+
       this.howler.play()
     }
   }
@@ -109,6 +116,14 @@ class ReactHowler extends Component {
     } else {
       this.howler.pause()
     }
+  }
+
+  /**
+   * Check the load status of the Howl
+   * @return {String} [unloaded, loading or loaded]
+   */
+  howlerState () {
+    return this.howler.state()
   }
 
   /**
@@ -180,6 +195,13 @@ class ReactHowler extends Component {
   }
 
   /**
+   * load audio file
+   */
+  load () {
+    this.howler.load()
+  }
+
+  /**
    * Only render a placeholder
    */
   render () {
@@ -196,6 +218,7 @@ ReactHowler.propTypes = {
   playing: PropTypes.bool,
   mute: PropTypes.bool,
   loop: PropTypes.bool,
+  preload: PropTypes.bool,
   volume: PropTypes.number,
   onEnd: PropTypes.func,
   onPause: PropTypes.func,
@@ -211,6 +234,7 @@ ReactHowler.defaultProps = {
   playing: true, // Enable autoplay by default
   format: [],
   mute: false,
+  preload: true,
   loop: false,
   volume: 1.0,
   onEnd: noop,
