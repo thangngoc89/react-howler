@@ -9,7 +9,7 @@ console.log('Clean up temp folder')
 ghpages.clean()
 
 console.log('Deploy with github token')
-ghpages.publish(path.join(__dirname, '../examples/react/dist'), {
+ghpages.publish(path.join(__dirname, '../examples/react/build'), {
   repo: 'https://' + process.env.GH_TOKEN + '@github.com/thangngoc89/react-howler.git',
   silent: true
 }, callback)

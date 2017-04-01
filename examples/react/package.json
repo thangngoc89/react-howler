@@ -3,6 +3,7 @@
   "private": true,
   "author": "Khoa Nguyen",
   "license": "MIT",
+  "homepage": ".",
   "devDependencies": {
     "react-scripts": "0.7.0"
   },
