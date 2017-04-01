@@ -1,5 +1,5 @@
 import React from 'react'
-import { OnlyPlayPauseButton, NoPreload, AutoPlay, FullControl } from './players'
+import { OnlyPlayPauseButton, NoPreload, SwapSource, AutoPlay, FullControl } from './players'
 
 class App extends React.Component {
   render () {
@@ -19,6 +19,11 @@ class App extends React.Component {
           <h1>Preload Disabled</h1>
           <p>(Check network requests for sound2.ogg to verify)</p>
           <NoPreload />
+          <hr />
+        </section>
+        <section>
+          <h1>Swap Source</h1>
+          <SwapSource />
           <hr />
         </section>
         <section>

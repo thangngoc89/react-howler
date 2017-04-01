@@ -55,7 +55,7 @@ open http://localhost:3000
 
 Prop      | Default | Description
 ----      | ------- | -----------
-src       |         | The src of audio for playing. Can be a string or an array
+src       |         | The sources to the track(s) to be loaded for the sound (URLs or base64 data URIs). These should be in order of preference, howler.js will automatically load the first one that is compatible with the current browser. If your files have no extensions, you will need to explicitly specify the extension using the `format` property. <br> Updating the `src` prop on the fly will destroy any currently playing howler instance and create a new one with the new `src`. Updating other props while keeping the `src` the same will maintain the current howler instance.
 preload   | true    | Automatically begin downloading the audio file when the react-howler is initiated.
 playing   | true    | Set to `true` or `false` to pause or play the media.<br>Setting to `true` on initial load will play the audio immediately after it is loaded
 loop      | false   | Set to `true` or `false` to enable/disable loop
@@ -153,11 +153,14 @@ This project uses standard code style.
 npm run lint
 ```
 
-# Audio file in examples
+# Audio files in examples
 
+#### `sound.ogg`
 Taken from [howler.js demo page](http://goldfirestudios.com/blog/104/howler.js-Modern-Web-Audio-Javascript-Library)
-
 Sound file direct link: [sound.ogg](http://goldfirestudios.com/proj/howlerjs/sound.ogg)
+
+#### `sound2.ogg`
+Fingerstyle Bass line over an Am chord progression By Serolillo (Own work) [CC BY 2.5 (http://creativecommons.org/licenses/by/2.5)], via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Fingerstyle_Bass_line_over_an_Am_chord_progression.ogg)
 
 # License
 
