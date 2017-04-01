@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactHowler from 'ReactHowler'
+import Button from '../components/Button'
 
 class NoPreload extends React.Component {
   constructor (props) {
@@ -45,11 +46,11 @@ class NoPreload extends React.Component {
           onLoad={() => this.setState({loadState: this.player.howlerState()})}
         />
         {this.state.loadState === 'unloaded' &&
-          <button onClick={this.handleLoad}>Load (Optional)</button>
+          <Button className='full' onClick={this.handleLoad}>Load (Optional)</Button>
         }
         <br />
-        <button onClick={this.handlePlay}>Play</button>
-        <button onClick={this.handlePause}>Pause</button>
+        <Button onClick={this.handlePlay}>Play</Button>
+        <Button onClick={this.handlePause}>Pause</Button>
       </div>
     )
   }

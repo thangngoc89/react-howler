@@ -1,11 +1,13 @@
 import React from 'react'
 import ReactHowler from 'ReactHowler'
+import Button from '../components/Button'
 
 class AutoPlay extends React.Component {
   constructor (props) {
     super(props)
 
     this.state = {
+      initialized: false,
       playing: true
     }
     this.handlePlay = this.handlePlay.bind(this)
@@ -25,16 +27,29 @@ class AutoPlay extends React.Component {
   }
 
   render () {
-    return (
-      <div>
-        <ReactHowler
-          src='sound.ogg'
-          playing={this.state.playing}
-        />
-        <button onClick={this.handlePlay}>Play</button>
-        <button onClick={this.handlePause}>Pause</button>
-      </div>
-    )
+    if (this.state.initialized === true) {
+      return (
+        <div>
+          <ReactHowler
+            src='sound.ogg'
+            playing={this.state.playing}
+          />
+          <Button onClick={this.handlePlay}>Play</Button>
+          <Button onClick={this.handlePause}>Pause</Button>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <Button
+            className='full'
+            onClick={this.setState.bind(this, {initialized: true})}
+          >
+            Initialize Auto Player
+          </Button>
+        </div>
+      )
+    }
   }
 }
 
