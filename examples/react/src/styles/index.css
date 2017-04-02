@@ -132,3 +132,21 @@ a.source-link:hover {
 .github-btn:hover {
   opacity: 1;
 }
+
+
+/* Player Specific Styles */
+.full-control {
+  margin-top: -1em;
+}
+
+.full-control .toggles label:first-of-type {
+  margin-right: 1.5em;
+}
+
+.full-control .volume {
+  margin-bottom: .5em;
+}
+
+.full-control .volume .slider-container {
+  margin: auto .5em;
+}

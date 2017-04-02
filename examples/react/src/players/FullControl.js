@@ -90,7 +90,7 @@ class AutoPlay extends React.Component {
 
   render () {
     return (
-      <div style={{marginTop: '-1em'}}>
+      <div className='full-control'>
         <ReactHowler
           src='sound.ogg'
           playing={this.state.playing}
@@ -102,33 +102,39 @@ class AutoPlay extends React.Component {
           volume={this.state.volume}
           ref={(ref) => (this.player = ref)}
         />
+
         <p>{(this.state.loaded) ? 'Loaded' : 'Loading'}</p>
-        <label style={{marginRight: '1.5em'}}>
-          Loop:
-          <input
-            type='checkbox'
-            checked={this.state.loop}
-            onChange={this.handleLoopToggle}
-          />
-        </label>
-        <label>
-          Mute:
-          <input
-            type='checkbox'
-            checked={this.state.mute}
-            onChange={this.handleMuteToggle}
-          />
-        </label>
+
+        <div className="toggles">
+          <label>
+            Loop:
+            <input
+              type='checkbox'
+              checked={this.state.loop}
+              onChange={this.handleLoopToggle}
+            />
+          </label>
+          <label>
+            Mute:
+            <input
+              type='checkbox'
+              checked={this.state.mute}
+              onChange={this.handleMuteToggle}
+            />
+          </label>
+        </div>
+
         <p>
           {'Status: '}
           {(this.state.seek !== undefined) ? this.state.seek.toFixed(2) : '0.00'}
           {' / '}
           {(this.state.duration) ? this.state.duration.toFixed(2) : 'NaN'}
         </p>
-        <div style={{marginBottom: '.5em'}}>
+
+        <div className='volume'>
           <label>
             Volume:
-            <span style={{margin: 'auto .5em'}}>
+            <span className='slider-container'>
               <input
                 type='range'
                 min='0'
