@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactHowler from 'ReactHowler'
 import raf from 'raf' // requestAnimationFrame polyfill
+import Button from '../components/Button'
 
 class AutoPlay extends React.Component {
   constructor (props) {
@@ -89,7 +90,7 @@ class AutoPlay extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='full-control'>
         <ReactHowler
           src='sound.ogg'
           playing={this.state.playing}
@@ -101,49 +102,59 @@ class AutoPlay extends React.Component {
           volume={this.state.volume}
           ref={(ref) => (this.player = ref)}
         />
-        <button onClick={this.handleToggle}>
-          {(this.state.playing) ? 'Pause' : 'Play'}
-        </button>
-        <button onClick={this.handleStop}>
-          Stop
-        </button>
+
         <p>{(this.state.loaded) ? 'Loaded' : 'Loading'}</p>
-        <p>
-          {'Status: '}
-          {(this.state.seek !== undefined) ? this.state.seek.toFixed(2) : 'NaN'}
-          {' / '}
-          {(this.state.duration) ? this.state.duration.toFixed(2) : 'NaN'}
-        </p>
-        <label>
-          Loop:
-          <input
-            type='checkbox'
-            checked={this.state.loop}
-            onChange={this.handleLoopToggle}
-          />
-        </label>
-        <label>
-          Mute:
-          <input
-            type='checkbox'
-            checked={this.state.mute}
-            onChange={this.handleMuteToggle}
-          />
-        </label>
-        <div>
+
+        <div className='toggles'>
           <label>
+            Loop:
             <input
-              type='range'
-              min='0'
-              max='1'
-              step='.05'
-              value={this.state.volume}
-              onChange={e => this.setState({volume: parseFloat(e.target.value)})}
+              type='checkbox'
+              checked={this.state.loop}
+              onChange={this.handleLoopToggle}
             />
-            <br /> Volume: {this.state.volume}
+          </label>
+          <label>
+            Mute:
+            <input
+              type='checkbox'
+              checked={this.state.mute}
+              onChange={this.handleMuteToggle}
+            />
           </label>
         </div>
 
+        <p>
+          {'Status: '}
+          {(this.state.seek !== undefined) ? this.state.seek.toFixed(2) : '0.00'}
+          {' / '}
+          {(this.state.duration) ? this.state.duration.toFixed(2) : 'NaN'}
+        </p>
+
+        <div className='volume'>
+          <label>
+            Volume:
+            <span className='slider-container'>
+              <input
+                type='range'
+                min='0'
+                max='1'
+                step='.05'
+                value={this.state.volume}
+                onChange={e => this.setState({volume: parseFloat(e.target.value)})}
+                style={{verticalAlign: 'bottom'}}
+              />
+            </span>
+            {this.state.volume.toFixed(2)}
+          </label>
+        </div>
+
+        <Button onClick={this.handleToggle}>
+          {(this.state.playing) ? 'Pause' : 'Play'}
+        </Button>
+        <Button onClick={this.handleStop}>
+          Stop
+        </Button>
       </div>
     )
   }

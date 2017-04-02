@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactHowler from 'ReactHowler'
+import Button from '../components/Button'
 
 class OnlyPlayPauseButton extends React.Component {
   constructor (props) {
@@ -31,8 +32,8 @@ class OnlyPlayPauseButton extends React.Component {
           src='sound.ogg'
           playing={this.state.playing}
         />
-        <button onClick={this.handlePlay}>Play</button>
-        <button onClick={this.handlePause}>Pause</button>
+        <Button onClick={this.handlePlay}>Play</Button>
+        <Button onClick={this.handlePause}>Pause</Button>
       </div>
     )
   }

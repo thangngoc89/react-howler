@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactHowler from 'ReactHowler'
+import Button from '../components/Button'
 
 class SwapSource extends React.Component {
   constructor (props) {
@@ -47,11 +48,11 @@ class SwapSource extends React.Component {
           // a new Howler.js instance
           src={this.sources[this.state.currentSrcIndex]}
         />
-        Currently playing {this.sources[this.state.currentSrcIndex]}
+        <Button className='full' onClick={this.handleSwap}>Swap Source</Button>
         <br />
-        <button onClick={this.handlePlay}>Play</button>
-        <button onClick={this.handlePause}>Pause</button>
-        <button onClick={this.handleSwap}>Swap Source</button>
+        <Button onClick={this.handlePlay}>Play</Button>
+        <Button onClick={this.handlePause}>Pause</Button>
+        <p>Currently playing {this.sources[this.state.currentSrcIndex]}</p>
       </div>
     )
   }
