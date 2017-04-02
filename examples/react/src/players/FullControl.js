@@ -105,7 +105,7 @@ class AutoPlay extends React.Component {
 
         <p>{(this.state.loaded) ? 'Loaded' : 'Loading'}</p>
 
-        <div className="toggles">
+        <div className='toggles'>
           <label>
             Loop:
             <input

@@ -143,6 +143,10 @@ a.source-link:hover {
   margin-right: 1.5em;
 }
 
+.full-control .toggles input {
+  margin-left: .5em;
+}
+
 .full-control .volume {
   margin-bottom: .5em;
 }

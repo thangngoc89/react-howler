@@ -10,7 +10,7 @@ class App extends React.Component {
         <a href='https://github.com/thangngoc89/react-howler' className='github-btn' />
         <div className='players'>
           <section>
-            <h1>Simple player</h1>
+            <h1>Simple Player</h1>
             <p className='subheading'>Only play/pause button</p>
             <OnlyPlayPauseButton />
             <SourceLink fileName='OnlyPlayPauseButton' />
