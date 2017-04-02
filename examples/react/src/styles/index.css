@@ -61,6 +61,16 @@ h1 {
 	}
 }
 
+@media (max-width: 500px) {
+  h1.title {
+    font-size: 2.5em;
+  }
+  .players section {
+    flex: 0 0 90%;
+    margin: 1em;
+  }
+}
+
 .players section .button {
 	margin: .25em;
 }
