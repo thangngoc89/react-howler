@@ -1,4 +1,5 @@
 import React from 'react'
+import SourceLink from './components/SourceLink'
 import { OnlyPlayPauseButton, NoPreload, SwapSource, AutoPlay, FullControl } from './players'
 
 class App extends React.Component {
@@ -12,23 +13,28 @@ class App extends React.Component {
             <h1>Simple player</h1>
             <p className='subheading'>Only play/pause button</p>
             <OnlyPlayPauseButton />
+            <SourceLink fileName='OnlyPlayPauseButton' />
           </section>
           <section>
             <h1>AutoPlay</h1>
             <AutoPlay />
+            <SourceLink fileName='AutoPlay' />
           </section>
           <section>
             <h1>Preload Disabled</h1>
             <p className='subheading'>(Check network requests for sound2.ogg)</p>
             <NoPreload />
+            <SourceLink fileName='NoPreload' />
           </section>
           <section>
             <h1>Swap Source</h1>
             <SwapSource />
+            <SourceLink fileName='SwapSource' />
           </section>
           <section>
             <h1>Full Control</h1>
             <FullControl />
+            <SourceLink fileName='FullControl' />
           </section>
           <section>
             <h1>Global Howler Object</h1>

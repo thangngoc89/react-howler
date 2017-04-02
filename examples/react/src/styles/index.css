@@ -51,6 +51,7 @@ h1 {
   border: 2px solid #69ba5e;
   border-radius: 10px;
   text-align: center;
+  position: relative;
 }
 
 @media (max-width: 979px) {
@@ -101,6 +102,19 @@ pre {
   border-radius: 4px;
 }
 
+a.source-link {
+	position: absolute;
+	font-size: .8em;
+	color: #41392f;
+	opacity: .8;
+	text-decoration: none;
+	right: 1em;
+	bottom: 1em;
+}
+
+a.source-link:hover {
+	opacity: 1;
+}
 
 /* Github Link */
 .github-btn {
