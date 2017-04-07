@@ -1,3 +1,8 @@
+# 3.6.1 - 2017-04-06
+
+- Fixed: Issue causing possible reinitialization when using array as `src` prop.
+
+
 # 3.6.0 - 2017-03-27
 
 - Added: `preload` prop (#27)

@@ -13,7 +13,9 @@ class ReactHowler extends Component {
   }
 
   componentWillReceiveProps (props) {
-    if (props.src !== this.props.src) {
+    // The src prop must be either a string or an array of strings
+    // Because of this, we can use it's JSON representation to check for changes
+    if (JSON.stringify(props.src) !== JSON.stringify(this.props.src)) {
       this.initHowler(props)
     } else {
       this.toggleHowler(props)
