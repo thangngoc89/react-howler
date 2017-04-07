@@ -7,7 +7,7 @@ class SwapSource extends React.Component {
     super(props)
 
     // The two files that we'll switch between
-    this.sources = ['sound.ogg', 'sound2.ogg']
+    this.sources = [['sound.ogg', 'sound.mp3'], ['sound2.ogg', 'sound2.mp3']]
 
     this.state = {
       currentSrcIndex: 0,
@@ -52,7 +52,7 @@ class SwapSource extends React.Component {
         <br />
         <Button onClick={this.handlePlay}>Play</Button>
         <Button onClick={this.handlePause}>Pause</Button>
-        <p>Currently playing {this.sources[this.state.currentSrcIndex]}</p>
+        <p>Currently playing {this.sources[this.state.currentSrcIndex][0] + '/mp3'}</p>
       </div>
     )
   }

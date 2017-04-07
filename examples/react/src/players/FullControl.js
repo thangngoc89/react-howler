@@ -92,7 +92,7 @@ class AutoPlay extends React.Component {
     return (
       <div className='full-control'>
         <ReactHowler
-          src='sound.ogg'
+          src={['sound.ogg', 'sound.mp3']}
           playing={this.state.playing}
           onLoad={this.handleOnLoad}
           onPlay={this.handleOnPlay}

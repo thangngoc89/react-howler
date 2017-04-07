@@ -41,7 +41,7 @@ class NoPreload extends React.Component {
         <ReactHowler
           preload={false}
           ref={(ref) => (this.player = ref)}
-          src='sound2.ogg'
+          src={['sound2.ogg', 'sound2.mp3']}
           playing={this.state.playing}
           onLoad={() => this.setState({loadState: this.player.howlerState()})}
         />

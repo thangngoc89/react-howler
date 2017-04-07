@@ -22,7 +22,7 @@ class App extends React.Component {
           </section>
           <section>
             <h1>Preload Disabled</h1>
-            <p className='subheading'>(Check network requests for sound2.ogg)</p>
+            <p className='subheading'>(Check network requests for sound2.ogg/mp3)</p>
             <NoPreload />
             <SourceLink fileName='NoPreload' />
           </section>

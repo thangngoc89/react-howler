@@ -29,7 +29,7 @@ class OnlyPlayPauseButton extends React.Component {
     return (
       <div>
         <ReactHowler
-          src='sound.ogg'
+          src={['sound.ogg', 'sound.mp3']}
           playing={this.state.playing}
         />
         <Button onClick={this.handlePlay}>Play</Button>
