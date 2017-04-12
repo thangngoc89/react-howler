@@ -1,3 +1,8 @@
+# 3.6.2 - 2017-04-11
+
+- Fixed: Replace React.PropTypes with `prop-types` package. Fixes deprecation warning when using react version greater than 15.5 (#34)
+
+
 # 3.6.1 - 2017-04-06
 
 - Fixed: Issue causing possible reinitialization when using array as `src` prop.
