@@ -3,7 +3,7 @@ import ReactHowler from 'ReactHowler'
 import raf from 'raf' // requestAnimationFrame polyfill
 import Button from '../components/Button'
 
-class AutoPlay extends React.Component {
+class FullControl extends React.Component {
   constructor (props) {
     super(props)
 
@@ -160,4 +160,4 @@ class AutoPlay extends React.Component {
   }
 }
 
-export default AutoPlay
+export default FullControl
