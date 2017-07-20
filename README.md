@@ -162,6 +162,10 @@ Sound file direct link: [sound.ogg](http://goldfirestudios.com/proj/howlerjs/sou
 #### `sound2.ogg`
 Fingerstyle Bass line over an Am chord progression By Serolillo (Own work) [CC BY 2.5 (http://creativecommons.org/licenses/by/2.5)], via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Fingerstyle_Bass_line_over_an_Am_chord_progression.ogg)
 
+# Behaviors to know
+
+* At the time of writing, Howler crashes when trying to seek on a sound which has the `unloaded` status. You need to load the sound before trying to use `seek`.
+
 # License
 
 MIT
