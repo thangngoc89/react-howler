@@ -1,3 +1,8 @@
+# 3.6.3 - 2017-07-23
+
+- Fixed: Prevent seeking if the sound is not loaded to avoid upstream issue (#41)
+
+
 # 3.6.2 - 2017-04-11
 
 - Fixed: Replace React.PropTypes with `prop-types` package. Fixes deprecation warning when using react version greater than 15.5 (#34)
