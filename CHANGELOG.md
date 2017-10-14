@@ -1,3 +1,10 @@
+# 3.6.4 - 2017-10-14
+
+- Updated: Revert prevent seeking if the sound is not loaded (#41) since upstream issue was fixed (#44)
+- Updated: Use fixed Howler.js version (#39)
+- Added: Support for React 16 (#46)
+
+
 # 3.6.3 - 2017-07-23
 
 - Fixed: Prevent seeking if the sound is not loaded to avoid upstream issue (#41)
