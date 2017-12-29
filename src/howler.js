@@ -1,7 +1,7 @@
-let Howler
+let Howler;
 
-if (typeof window !== 'undefined') {
-  Howler = require('howler')
+if (typeof window !== "undefined") {
+  Howler = require("howler");
 }
 
-module.exports = Howler
+module.exports = Howler;

@@ -1,1 +1,1 @@
-module.exports = require('./ReactHowler').default
+module.exports = require("./ReactHowler").default;

@@ -1,42 +1,42 @@
-import React from 'react'
-import ReactHowler from 'ReactHowler'
-import Button from '../components/Button'
+import React from "react";
+import ReactHowler from "ReactHowler";
+import Button from "../components/Button";
 
 class OnlyPlayPauseButton extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
 
     this.state = {
-      playing: false
-    }
-    this.handlePlay = this.handlePlay.bind(this)
-    this.handlePause = this.handlePause.bind(this)
+      playing: false,
+    };
+    this.handlePlay = this.handlePlay.bind(this);
+    this.handlePause = this.handlePause.bind(this);
   }
 
-  handlePlay () {
+  handlePlay() {
     this.setState({
-      playing: true
-    })
+      playing: true,
+    });
   }
 
-  handlePause () {
+  handlePause() {
     this.setState({
-      playing: false
-    })
+      playing: false,
+    });
   }
 
-  render () {
+  render() {
     return (
       <div>
         <ReactHowler
-          src={['sound.ogg', 'sound.mp3']}
+          src={["sound.ogg", "sound.mp3"]}
           playing={this.state.playing}
         />
         <Button onClick={this.handlePlay}>Play</Button>
         <Button onClick={this.handlePause}>Pause</Button>
       </div>
-    )
+    );
   }
 }
 
-export default OnlyPlayPauseButton
+export default OnlyPlayPauseButton;

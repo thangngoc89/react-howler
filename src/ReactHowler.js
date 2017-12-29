@@ -1,37 +1,38 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Howl } from './howler'
-import { noop } from './utils'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Howl } from "./howler";
+import { noop } from "./utils";
 
 class ReactHowler extends Component {
-  constructor (props) {
-    super(props)
-    this.initHowler = this.initHowler.bind(this)
+  constructor(props) {
+    super(props);
+    this.initHowler = this.initHowler.bind(this);
   }
 
-  componentDidMount () {
-    this.initHowler()
+  componentDidMount() {
+    this.initHowler();
   }
 
-  componentWillReceiveProps (props) {
+  componentWillReceiveProps(props) {
     // The src prop must be either a string or an array of strings
     // Because of this, we can use it's JSON representation to check for changes
     if (JSON.stringify(props.src) !== JSON.stringify(this.props.src)) {
-      this.initHowler(props)
+      this.initHowler(props);
     } else {
-      this.toggleHowler(props)
+      this.toggleHowler(props);
     }
   }
 
-  componentWillUnmount () {
-    this.destroyHowler()
+  componentWillUnmount() {
+    this.destroyHowler();
   }
   /**
    * Create howler object with given props
    */
-  initHowler (props = this.props) {
-    this.destroyHowler()
-    if (typeof Howl !== 'undefined') { // Check if window is available
+  initHowler(props = this.props) {
+    this.destroyHowler();
+    if (typeof Howl !== "undefined") {
+      // Check if window is available
       this.howler = new Howl({
         src: props.src,
         format: props.format,
@@ -46,11 +47,11 @@ class ReactHowler extends Component {
         onstop: props.onStop,
         onload: props.onLoad,
         onloaderror: props.onLoadError,
-        html5: props.html5
-      })
+        html5: props.html5,
+      });
 
       if (props.playing) {
-        this.play()
+        this.play();
       }
     }
   }
@@ -58,53 +59,53 @@ class ReactHowler extends Component {
   /**
    * Stop, unload and destroy howler object
    */
-  destroyHowler () {
+  destroyHowler() {
     if (this.howler) {
-      this.howler.off() // Remove event listener
-      this.howler.stop() // Stop playback
-      this.howler.unload() // Remove sound from pool
-      this.howler = null // Destroy it
+      this.howler.off(); // Remove event listener
+      this.howler.stop(); // Stop playback
+      this.howler.unload(); // Remove sound from pool
+      this.howler = null; // Destroy it
     }
   }
 
-  toggleHowler (props) {
-    (props.playing) ? this.play() : this.pause()
-    this.mute(props.mute)
-    this.loop(props.loop)
+  toggleHowler(props) {
+    props.playing ? this.play() : this.pause();
+    this.mute(props.mute);
+    this.loop(props.loop);
 
     if (props.volume !== this.props.volume) {
-      this.volume(props.volume)
+      this.volume(props.volume);
     }
 
     if (props.seek !== this.seek()) {
-      this.seek(props.seek)
+      this.seek(props.seek);
     }
   }
 
-  set howler (howl) {
+  set howler(howl) {
     if (howl) {
-      this._howler = howl
+      this._howler = howl;
     }
   }
 
-  get howler () {
-    return this._howler
+  get howler() {
+    return this._howler;
   }
 
   /**
    * Begins playback of a sound when not playing
    */
-  play () {
-    const playing = this.howler.playing()
+  play() {
+    const playing = this.howler.playing();
 
     if (!playing) {
       // Automatically load if we're trying to play
       // and the howl is not loaded
-      if (this.howlerState() === 'unloaded') {
-        this.load()
+      if (this.howlerState() === "unloaded") {
+        this.load();
       }
 
-      this.howler.play()
+      this.howler.play();
     }
   }
 
@@ -113,11 +114,11 @@ class ReactHowler extends Component {
    * If no id given, pauses all playback
    * @param {Number} id = undefined [sound of group to pause]
    */
-  pause (id = undefined) {
+  pause(id = undefined) {
     if (id) {
-      this.howler.pause(id)
+      this.howler.pause(id);
     } else {
-      this.howler.pause()
+      this.howler.pause();
     }
   }
 
@@ -125,8 +126,8 @@ class ReactHowler extends Component {
    * Check the load status of the Howl
    * @return {String} [unloaded, loading or loaded]
    */
-  howlerState () {
-    return this.howler.state()
+  howlerState() {
+    return this.howler.state();
   }
 
   /**
@@ -134,11 +135,11 @@ class ReactHowler extends Component {
    * If no id given, stops all playback
    * @param {Number} id = undefined [sound of group to pause]
    */
-  stop (id = undefined) {
+  stop(id = undefined) {
     if (id) {
-      this.howler.stop(id)
+      this.howler.stop(id);
     } else {
-      this.howler.stop()
+      this.howler.stop();
     }
   }
 
@@ -147,8 +148,8 @@ class ReactHowler extends Component {
    * @param {Boolean} [muted] [True to mute and false to unmute]
    * @param {Number} [id] [The sound ID. If none is passed, all sounds in group are muted]
    */
-  mute (...args) {
-    this.howler.mute(...args)
+  mute(...args) {
+    this.howler.mute(...args);
   }
 
   /**
@@ -156,8 +157,8 @@ class ReactHowler extends Component {
    * @param {Number} [volume] [Volume from 0.0 to 1.0]
    * @param {Number} [id] [The sound ID. If none is passed, all sounds in group are muted]
    */
-  volume (...args) {
-    return this.howler.volume(...args)
+  volume(...args) {
+    return this.howler.volume(...args);
   }
 
   /**
@@ -165,8 +166,8 @@ class ReactHowler extends Component {
    * @param {Boolean} [loop] [To loop or not to loop, that is the question]
    * @param {Number} [id] [The sound ID. If none is passed, all sounds in group will have their loop property updated]
    */
-  loop (...args) {
-    return this.howler.loop(...args)
+  loop(...args) {
+    return this.howler.loop(...args);
   }
 
   /**
@@ -174,18 +175,18 @@ class ReactHowler extends Component {
    * @param  {Number} pos [seek player to position]
    * @return {Number}     [return current position]
    */
-  seek (pos = null) {
+  seek(pos = null) {
     if (!this.howler) {
-      return 0
+      return 0;
     }
 
     if (!pos && pos !== 0) {
-      return this.howler.seek()
+      return this.howler.seek();
     }
 
     if (pos || pos === 0) {
-      this.howler.seek(pos)
-      return pos
+      this.howler.seek(pos);
+      return pos;
     }
   }
 
@@ -193,29 +194,29 @@ class ReactHowler extends Component {
    * Get the duration of the audio source
    * @return {Number} [Audio length in seconds. Will return 0 until after the load event fires]
    */
-  duration () {
-    return this.howler.duration()
+  duration() {
+    return this.howler.duration();
   }
 
   /**
    * load audio file
    */
-  load () {
-    this.howler.load()
+  load() {
+    this.howler.load();
   }
 
   /**
    * Only render a placeholder
    */
-  render () {
-    return React.createElement('div', null)
+  render() {
+    return React.createElement("div", null);
   }
 }
 
 ReactHowler.propTypes = {
   src: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string)
+    PropTypes.arrayOf(PropTypes.string),
   ]).isRequired,
   format: PropTypes.arrayOf(PropTypes.string),
   playing: PropTypes.bool,
@@ -230,8 +231,8 @@ ReactHowler.propTypes = {
   onStop: PropTypes.func,
   onLoad: PropTypes.func,
   onLoadError: PropTypes.func,
-  html5: PropTypes.bool
-}
+  html5: PropTypes.bool,
+};
 
 ReactHowler.defaultProps = {
   playing: true, // Enable autoplay by default
@@ -247,7 +248,7 @@ ReactHowler.defaultProps = {
   onStop: noop,
   onLoad: noop,
   onLoadError: noop,
-  html5: false
-}
+  html5: false,
+};
 
-export default ReactHowler
+export default ReactHowler;
