@@ -1,4 +1,6 @@
 # react-howler
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/thangngoc89/react-howler.svg)](https://greenkeeper.io/)
 A React.js wrapper for howler.js (audio player).
 
 ReactHowler has no UI, you have to provide your own UI.
