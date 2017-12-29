@@ -1,3 +1,7 @@
+# 3.6.5 - 2017-12-29
+
+- Updated: Use Howler.js version `2.0.7` to fix Chrome deprecation warning (#52, #53) 
+
 # 3.6.4 - 2017-10-14
 
 - Updated: Revert prevent seeking if the sound is not loaded (#41) since upstream issue was fixed (#44)
