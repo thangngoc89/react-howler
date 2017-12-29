@@ -13,13 +13,18 @@ cache:
 before_install:
   - npm install -g npm
   - npm install -g yarn --cache-min 999999999
+  - yarn global add greenkeeper-lockfile@1
 
 install:
   - yarn install
 
+before_script: greenkeeper-lockfile-update
+
 script:
   - npm run babelify
   - npm run example:react:build
+
+after_script: greenkeeper-lockfile-upload
 
 before_deploy:
   - git config --global user.name "Khoa Nguyen"
