@@ -1,6 +1,5 @@
 # react-howler
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/thangngoc89/react-howler.svg)](https://greenkeeper.io/)
 A React.js wrapper for howler.js (audio player).
 
 ReactHowler has no UI, you have to provide your own UI.
@@ -8,6 +7,8 @@ ReactHowler has no UI, you have to provide your own UI.
 Props can be passed to control playback and react to events such as end, load, play, ...
 
 [![Travis status](https://travis-ci.org/thangngoc89/react-howler.svg)](https://travis-ci.org/thangngoc89/react-howler)
+[![Greenkeeper badge](https://badges.greenkeeper.io/thangngoc89/react-howler.svg)](https://greenkeeper.io/)
+
 [![LICENSE MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/thangngoc89/react-howler)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![npm](https://img.shields.io/npm/v/react-howler.svg)](https://npmjs.org/package/react-howler)
