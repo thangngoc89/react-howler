@@ -21,7 +21,7 @@ before_script: greenkeeper-lockfile-update
 
 script:
   - npm run babelify
-  - npm run example:react:build
+  - npm test
 
 after_script: greenkeeper-lockfile-upload
 
