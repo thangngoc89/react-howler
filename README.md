@@ -59,7 +59,7 @@ open http://localhost:3000
 Prop      | Default | Description
 ----      | ------- | -----------
 src       |         | The sources to the track(s) to be loaded for the sound (URLs or base64 data URIs). These should be in order of preference, howler.js will automatically load the first one that is compatible with the current browser. If your files have no extensions, you will need to explicitly specify the extension using the `format` property. <br> Updating the `src` prop on the fly will destroy any currently playing howler instance and create a new one with the new `src`. Updating other props while keeping the `src` the same will maintain the current howler instance.
-preload   | true    | Automatically begin downloading the audio file when the react-howler is initiated.
+preload   | true    | Set to `true` to begin downloading the audio file if it is not loaded yet.
 playing   | true    | Set to `true` or `false` to pause or play the media.<br>Setting to `true` on initial load will play the audio immediately after it is loaded
 loop      | false   | Set to `true` or `false` to enable/disable loop
 mute      | false   | Set to `true` or `false` to mute/unmute current audio
