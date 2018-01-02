@@ -1,3 +1,7 @@
+# 3.6.7 - 2017-01-02
+
+- Fixed: Don't seek if no props.seek specified (#57) 
+
 # 3.6.5 - 2017-12-29
 
 - Updated: Use Howler.js version `2.0.7` to fix Chrome deprecation warning (#52, #53) 
