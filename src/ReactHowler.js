@@ -76,7 +76,7 @@ class ReactHowler extends Component {
       this.volume(props.volume)
     }
 
-    if (props.seek !== this.seek()) {
+    if (typeof props.seek !== 'undefined' && props.seek !== this.seek()) {
       this.seek(props.seek)
     }
   }
