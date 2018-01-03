@@ -79,6 +79,10 @@ class ReactHowler extends Component {
     if (typeof props.seek !== 'undefined' && props.seek !== this.seek()) {
       this.seek(props.seek)
     }
+
+    if (props.preload && this.howlerState() === 'unloaded') {
+      this.load()
+    }
   }
 
   set howler (howl) {

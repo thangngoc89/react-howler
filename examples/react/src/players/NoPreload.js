@@ -7,10 +7,10 @@ class NoPreload extends React.Component {
     super(props)
 
     this.state = {
-      loadState: 'unloaded',
+      preload: false,
+      loaded: false,
       playing: false
     }
-    this.player = null
     this.handleLoad = this.handleLoad.bind(this)
     this.handlePlay = this.handlePlay.bind(this)
     this.handlePause = this.handlePause.bind(this)
@@ -20,7 +20,9 @@ class NoPreload extends React.Component {
   // If you don't call load(), the audio will be automatically
   // loaded when you set the playing prop to true
   handleLoad () {
-    this.player.load()
+    this.setState({
+      preload: true
+    })
   }
 
   handlePlay () {
@@ -39,13 +41,12 @@ class NoPreload extends React.Component {
     return (
       <div>
         <ReactHowler
-          preload={false}
-          ref={(ref) => (this.player = ref)}
           src={['sound2.ogg', 'sound2.mp3']}
+          preload={this.state.preload}
           playing={this.state.playing}
-          onLoad={() => this.setState({loadState: this.player.howlerState()})}
+          onLoad={() => this.setState({loaded: true})}
         />
-        {this.state.loadState === 'unloaded' &&
+        {!this.state.loaded &&
           <Button className='full' onClick={this.handleLoad}>Load (Optional)</Button>
         }
         <br />
