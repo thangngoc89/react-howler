@@ -1,3 +1,7 @@
+# 3.7.0 - 2017-01-03
+
+- Added: Load sound when `props.preload` changes to true (#58)
+
 # 3.6.7 - 2017-01-02
 
 - Fixed: Don't seek if no props.seek specified (#57) 
