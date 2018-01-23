@@ -1545,9 +1545,9 @@ home-or-tmp@^2.0.0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.1"
 
-howler@2.0.7:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/howler/-/howler-2.0.7.tgz#65d035e36cd975365c9e03bf46db3f2f7722788b"
+howler@2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/howler/-/howler-2.0.8.tgz#7eb9128039590fd5f62462ed40882110940a8756"
 
 http-signature@~1.1.0:
   version "1.1.1"

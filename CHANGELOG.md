@@ -1,3 +1,7 @@
+# 3.7.1 - 2017-01-23
+
+- Updated: Use Howler.js version `2.0.8` to fix Chrome deprecation warning (#55) 
+
 # 3.7.0 - 2017-01-03
 
 - Added: Load sound when `props.preload` changes to true (#58)
