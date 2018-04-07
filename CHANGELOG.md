@@ -1,3 +1,7 @@
+# 3.7.2 - 2017-04-07
+
+- Updated: Use Howler.js version `2.0.9`
+
 # 3.7.1 - 2017-01-23
 
 - Updated: Use Howler.js version `2.0.8` to fix Chrome deprecation warning (#55) 
