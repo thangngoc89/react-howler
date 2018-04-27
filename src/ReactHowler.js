@@ -69,8 +69,11 @@ class ReactHowler extends Component {
 
   toggleHowler (props) {
     (props.playing) ? this.play() : this.pause()
-    this.mute(props.mute)
     this.loop(props.loop)
+
+    if (props.mute !== this.props.mute) {
+      this.mute(props.mute)
+    }
 
     if (props.volume !== this.props.volume) {
       this.volume(props.volume)
