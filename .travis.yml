@@ -3,6 +3,7 @@ sudo: false
 node_js:
   - 6
   - 4
+  - 10
 cache:
   directories:
     - $HOME/.npm
