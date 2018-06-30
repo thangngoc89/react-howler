@@ -1,16 +1,21 @@
-# 3.7.2 - 2017-04-07
+# 3.7.3 - 2018-06-30
+
+- Fixed: Don't mute if the `mute` prop has not changed (#65)
+- Updated: Use Howler.js version `2.0.13`
+
+# 3.7.2 - 2018-04-07
 
 - Updated: Use Howler.js version `2.0.9`
 
-# 3.7.1 - 2017-01-23
+# 3.7.1 - 2018-01-23
 
 - Updated: Use Howler.js version `2.0.8` to fix Chrome deprecation warning (#55) 
 
-# 3.7.0 - 2017-01-03
+# 3.7.0 - 2018-01-03
 
 - Added: Load sound when `props.preload` changes to true (#58)
 
-# 3.6.7 - 2017-01-02
+# 3.6.7 - 2018-01-02
 
 - Fixed: Don't seek if no props.seek specified (#57) 
 
