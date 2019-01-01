@@ -1,6 +1,6 @@
 {
   "name": "react-howler",
-  "version": "3.7.3",
+  "version": "3.7.4",
   "description": "A React.js wrapper for howler.js (audio player)",
   "main": "lib/index.js",
   "scripts": {
@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/thangngoc89/react-howler#readme",
   "dependencies": {
-    "howler": "2.1.1",
+    "howler": "^2.1.1",
     "prop-types": "^15.5.6"
   },
   "devDependencies": {

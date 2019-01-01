@@ -1,3 +1,7 @@
+# 3.7.4 - 2019-01-01
+
+- Updated: Use Howler.js version `^2.1.1`. Revert to using semantic Howler.js versions (Rolling back #39) 
+
 # 3.7.3 - 2018-06-30
 
 - Fixed: Don't mute if the `mute` prop has not changed (#65)
