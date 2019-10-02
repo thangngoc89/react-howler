@@ -40,7 +40,7 @@ class App extends Component {
 }
 ```
 
-For a full working example please see it in  [App.js](https://github.com/thangngoc89/react-howler/tree/master/examples/react/App.js)
+For a full working example please see it in  [App.js](https://github.com/thangngoc89/react-howler/tree/master/examples/react/src/App.js)
 
 # Demo
 
@@ -107,7 +107,7 @@ import React, { Component } from 'react'
 import ReactHowler from 'react-howler'
 
 class App extends Component {
-  getHower () {
+  getHowler () {
     this.player.howler
   }
 
