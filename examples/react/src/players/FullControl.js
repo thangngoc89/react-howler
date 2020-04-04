@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactHowler from 'ReactHowler'
+import ReactHowler from 'react-howler'
 import raf from 'raf' // requestAnimationFrame polyfill
 import Button from '../components/Button'
 
