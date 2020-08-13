@@ -26,6 +26,7 @@ class ReactHowler extends Component {
   componentWillUnmount () {
     this.destroyHowler()
   }
+
   /**
    * Create howler object with given props
    */

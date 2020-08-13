@@ -44,11 +44,10 @@ class NoPreload extends React.Component {
           src={['sound2.ogg', 'sound2.mp3']}
           preload={this.state.preload}
           playing={this.state.playing}
-          onLoad={() => this.setState({loaded: true})}
+          onLoad={() => this.setState({ loaded: true })}
         />
         {!this.state.loaded &&
-          <Button className='full' onClick={this.handleLoad}>Load (Optional)</Button>
-        }
+          <Button className='full' onClick={this.handleLoad}>Load (Optional)</Button>}
         <br />
         <Button onClick={this.handlePlay}>Play</Button>
         <Button onClick={this.handlePause}>Pause</Button>

@@ -141,8 +141,8 @@ class FullControl extends React.Component {
                 max='1'
                 step='.05'
                 value={this.state.volume}
-                onChange={e => this.setState({volume: parseFloat(e.target.value)})}
-                style={{verticalAlign: 'bottom'}}
+                onChange={e => this.setState({ volume: parseFloat(e.target.value) })}
+                style={{ verticalAlign: 'bottom' }}
               />
             </span>
             {this.state.volume.toFixed(2)}

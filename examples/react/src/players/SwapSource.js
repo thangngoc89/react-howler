@@ -21,8 +21,8 @@ class SwapSource extends React.Component {
 
   handleSwap () {
     // Just switch back and forth between 0 and 1
-    let nextIndex = this.state.currentSrcIndex === 0 ? 1 : 0
-    this.setState({currentSrcIndex: nextIndex})
+    const nextIndex = this.state.currentSrcIndex === 0 ? 1 : 0
+    this.setState({ currentSrcIndex: nextIndex })
   }
 
   handlePlay () {

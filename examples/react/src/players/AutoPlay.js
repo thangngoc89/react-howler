@@ -43,7 +43,7 @@ class AutoPlay extends React.Component {
         <div>
           <Button
             className='full'
-            onClick={e => this.setState({initialized: true})}
+            onClick={e => this.setState({ initialized: true })}
           >
             Initialize Auto Player
           </Button>
