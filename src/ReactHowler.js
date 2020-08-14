@@ -13,13 +13,13 @@ class ReactHowler extends Component {
     this.initHowler()
   }
 
-  componentWillReceiveProps (props) {
+  componentDidUpdate (prevProps) {
     // The src prop must be either a string or an array of strings
     // Because of this, we can use it's JSON representation to check for changes
-    if (JSON.stringify(props.src) !== JSON.stringify(this.props.src)) {
-      this.initHowler(props)
+    if (JSON.stringify(prevProps.src) !== JSON.stringify(this.props.src)) {
+      this.initHowler(this.props)
     } else {
-      this.toggleHowler(props)
+      this.toggleHowler(prevProps)
     }
   }
 
@@ -68,23 +68,23 @@ class ReactHowler extends Component {
     }
   }
 
-  toggleHowler (props) {
-    (props.playing) ? this.play() : this.pause()
-    this.loop(props.loop)
+  toggleHowler (prevProps) {
+    (this.props.playing) ? this.play() : this.pause()
+    this.loop(this.props.loop)
 
-    if (props.mute !== this.props.mute) {
-      this.mute(props.mute)
+    if (prevProps.mute !== this.props.mute) {
+      this.mute(this.props.mute)
     }
 
-    if (props.volume !== this.props.volume) {
-      this.volume(props.volume)
+    if (prevProps.volume !== this.props.volume) {
+      this.volume(this.props.volume)
     }
 
-    if (typeof props.seek !== 'undefined' && props.seek !== this.seek()) {
-      this.seek(props.seek)
+    if (typeof this.props.seek !== 'undefined' && this.props.seek !== this.seek()) {
+      this.seek(this.props.seek)
     }
 
-    if (props.preload && this.howlerState() === 'unloaded') {
+    if (this.props.preload && this.howlerState() === 'unloaded') {
       this.load()
     }
   }
