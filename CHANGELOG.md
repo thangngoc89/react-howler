@@ -1,3 +1,8 @@
+# 3.7.5 - 2020-08-14
+
+- Fixed: Use `componentDidUpdate` and remove use of depreciated `componentWillReceiveProps` method (#90)
+- Updated: Add dev dependencies to remove reliance on global packages for development
+
 # 3.7.4 - 2019-01-01
 
 - Updated: Use Howler.js version `^2.1.1`. Revert to using semantic Howler.js versions (Rolling back #39) 
