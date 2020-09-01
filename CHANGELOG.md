@@ -1,3 +1,7 @@
+# 3.8.0 - 2020-09-01
+
+- Added: Support `xhrWithCredentials` (#77)
+
 # 3.7.5 - 2020-08-14
 
 - Fixed: Use `componentDidUpdate` and remove use of depreciated `componentWillReceiveProps` method (#90)
