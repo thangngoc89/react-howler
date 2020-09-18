@@ -66,7 +66,6 @@ mute      | false   | Set to `true` or `false` to mute/unmute current audio
 volume    | 1.0     | The volume of the specific howl, from `0.0` to `1.0`
 html5     | false   | Set to `true` to force HTML5 Audio. This should be used for large audio files so that you don't have to wait for the full file to be downloaded and decoded before playing.
 format    | []      | howler.js automatically detects your file format from the extension, but you may also specify a format in situations where extraction won't work (such as with a SoundCloud stream).
-xhrWithCredentials | false | Set to `true` if you want `withCredentials` flag on XHR request. [see reference](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials).
 xhr       | {}      | When using Web Audio, howler.js uses an XHR request to load the audio files. If you need to send custom headers, set the HTTP method or enable `withCredentials` ([see reference](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials)), include them with this parameter. Each is optional (method defaults to `GET`, headers default to `null` and withCredentials defaults to `false`). For example: <pre lang="JSX">`<ReactHowler src="sound.webm" xhr={{ method: 'POST', headers: { Authorization: 'Bearer:' + token, }, withCredentials: true, }} />`</pre>
 onPlay    | noop    | Called when audio starts or resumes playing
 onPause   | noop    | Called when audio is paused
