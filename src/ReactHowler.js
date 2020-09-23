@@ -35,7 +35,7 @@ class ReactHowler extends Component {
     if (typeof Howl !== 'undefined') { // Check if window is available
       this.howler = new Howl({
         src: props.src,
-        xhrWithCredentials: props.xhrWithCredentials,
+        xhr: props.xhr,
         format: props.format,
         mute: props.mute,
         loop: props.loop,
@@ -227,7 +227,7 @@ ReactHowler.propTypes = {
     PropTypes.arrayOf(PropTypes.string)
   ]).isRequired,
   format: PropTypes.arrayOf(PropTypes.string),
-  xhrWithCredentials: PropTypes.bool,
+  xhr: PropTypes.object,
   playing: PropTypes.bool,
   mute: PropTypes.bool,
   loop: PropTypes.bool,
@@ -246,7 +246,7 @@ ReactHowler.propTypes = {
 ReactHowler.defaultProps = {
   playing: true, // Enable autoplay by default
   format: [],
-  xhrWithCredentials: false,
+  xhr: {},
   mute: false,
   preload: true,
   loop: false,
