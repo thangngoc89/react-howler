@@ -1,3 +1,11 @@
+# 4.0.0 - 2020-09-23
+
+- Added: Support `xhr` (#96)
+
+## Breaking Changes
+
+- Removed: Support `xhrWithCredentials` - now requiring Howler version >= `2.2.0` (#96)
+
 # 3.8.0 - 2020-09-01
 
 - Added: Support `xhrWithCredentials` (#77)
