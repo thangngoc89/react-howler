@@ -159,10 +159,16 @@ a.source-link:hover {
   margin-left: .5em;
 }
 
-.full-control .volume {
+.full-control .volume,
+.full-control .seek {
   margin-bottom: .5em;
 }
 
-.full-control .volume .slider-container {
+.full-control .volume .slider-container,
+.full-control .seek .slider-container {
   margin: auto .5em;
+}
+
+.slider-container input {
+  vertical-align: bottom;
 }

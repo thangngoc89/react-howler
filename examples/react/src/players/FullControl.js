@@ -12,7 +12,9 @@ class FullControl extends React.Component {
       loaded: false,
       loop: false,
       mute: false,
-      volume: 1.0
+      volume: 1.0,
+      seek: 0.0,
+      isSeeking: false
     }
     this.handleToggle = this.handleToggle.bind(this)
     this.handleOnLoad = this.handleOnLoad.bind(this)
@@ -22,6 +24,9 @@ class FullControl extends React.Component {
     this.renderSeekPos = this.renderSeekPos.bind(this)
     this.handleLoopToggle = this.handleLoopToggle.bind(this)
     this.handleMuteToggle = this.handleMuteToggle.bind(this)
+    this.handleMouseDownSeek = this.handleMouseDownSeek.bind(this)
+    this.handleMouseUpSeek = this.handleMouseUpSeek.bind(this)
+    this.handleSeekingChange = this.handleSeekingChange.bind(this)
   }
 
   componentWillUnmount () {
@@ -75,10 +80,32 @@ class FullControl extends React.Component {
     })
   }
 
-  renderSeekPos () {
+  handleMouseDownSeek () {
     this.setState({
-      seek: this.player.seek()
+      isSeeking: true
     })
+  }
+
+  handleMouseUpSeek (e) {
+    this.setState({
+      isSeeking: false
+    })
+
+    this.player.seek(e.target.value)
+  }
+
+  handleSeekingChange (e) {
+    this.setState({
+      seek: parseFloat(e.target.value)
+    })
+  }
+
+  renderSeekPos () {
+    if (!this.state.isSeeking) {
+      this.setState({
+        seek: this.player.seek()
+      })
+    }
     if (this.state.playing) {
       this._raf = raf(this.renderSeekPos)
     }
@@ -126,7 +153,7 @@ class FullControl extends React.Component {
 
         <p>
           {'Status: '}
-          {(this.state.seek !== undefined) ? this.state.seek.toFixed(2) : '0.00'}
+          {this.state.seek.toFixed(2)}
           {' / '}
           {(this.state.duration) ? this.state.duration.toFixed(2) : 'NaN'}
         </p>
@@ -142,10 +169,27 @@ class FullControl extends React.Component {
                 step='.05'
                 value={this.state.volume}
                 onChange={e => this.setState({ volume: parseFloat(e.target.value) })}
-                style={{ verticalAlign: 'bottom' }}
               />
             </span>
             {this.state.volume.toFixed(2)}
+          </label>
+        </div>
+
+        <div className='seek'>
+          <label>
+            Seek:
+            <span className='slider-container'>
+              <input
+                type='range'
+                min='0'
+                max={this.state.duration ? this.state.duration.toFixed(2) : 0}
+                step='.01'
+                value={this.state.seek}
+                onChange={this.handleSeekingChange}
+                onMouseDown={this.handleMouseDownSeek}
+                onMouseUp={this.handleMouseUpSeek}
+              />
+            </span>
           </label>
         </div>
 
