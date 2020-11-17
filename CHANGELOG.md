@@ -2,7 +2,7 @@
 
 ## Breaking Changes
 
-- Removed: Seek Property (#59, #102, #103)
+- Removed: Seek Property (#59, #101, #103)
 
 # 4.0.0 - 2020-09-23
 
