@@ -1,7 +1,7 @@
 language: node_js
 sudo: false
 node_js:
-  - 6
+  - lts/*
 cache:
   directories:
     - $HOME/.npm
@@ -34,7 +34,6 @@ deploy:
   script: npm run deploy
   on:
     branch: master
-    node: '5'
 
 env:
   global:
