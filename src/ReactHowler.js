@@ -1,16 +1,22 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Howl } from './howler'
-import { noop } from './utils'
+import { Component } from "react";
+import PropTypes from "prop-types";
+import { Howler, Howl } from "howler";
+
+import { noop } from "./utils";
+
+if (typeof window !== 'undefined') {
+  window.Howler = Howler;
+}
 
 class ReactHowler extends Component {
-  constructor (props) {
-    super(props)
-    this.initHowler = this.initHowler.bind(this)
-  }
+
+  state = {
+    isLocked: Howler.state === "suspended",
+  };
 
   componentDidMount () {
-    this.initHowler()
+    this.initHowler(this.props)
+    this.props.onLock(this.state.isLocked);
   }
 
   componentDidUpdate (prevProps) {
@@ -30,30 +36,29 @@ class ReactHowler extends Component {
   /**
    * Create howler object with given props
    */
-  initHowler (props = this.props) {
-    this.destroyHowler()
-    if (typeof Howl !== 'undefined') { // Check if window is available
-      this.howler = new Howl({
-        src: props.src,
-        xhr: props.xhr,
-        format: props.format,
-        mute: props.mute,
-        loop: props.loop,
-        preload: props.preload,
-        volume: props.volume,
-        onend: props.onEnd,
-        onplay: props.onPlay,
-        onpause: props.onPause,
-        onvolume: props.onVolume,
-        onstop: props.onStop,
-        onload: props.onLoad,
-        onloaderror: props.onLoadError,
-        html5: props.html5
-      })
+  initHowler(props) {
+    this.destroyHowler();
+    this.howler = new Howl({
+      src: props.src,
+      xhr: props.xhr,
+      format: props.format,
+      mute: props.mute,
+      loop: props.loop,
+      preload: props.preload,
+      volume: props.volume,
+      onend: props.onEnd,
+      onplay: props.onPlay,
+      onpause: props.onPause,
+      onvolume: props.onVolume,
+      onunlock: this.onUnlock,
+      onstop: props.onStop,
+      onload: props.onLoad,
+      onloaderror: props.onLoadError,
+      html5: props.html5,
+    });
 
-      if (props.playing) {
-        this.play()
-      }
+    if (props.playing) {
+      this.play();
     }
   }
 
@@ -96,10 +101,19 @@ class ReactHowler extends Component {
     return this._howler
   }
 
+  get isLocked () {
+    return this.state.isLocked;
+  }
+
+  onUnlock = () => {
+    this.setState({ isLocked: false });
+    this.props.onLock(false);
+  }
+
   /**
    * Begins playback of a sound when not playing
    */
-  play () {
+  play() {
     const playing = this.howler.playing()
 
     if (!playing) {
@@ -209,9 +223,6 @@ class ReactHowler extends Component {
     this.howler.load()
   }
 
-  /**
-   * Only render a placeholder
-   */
   render () {
     return React.createElement('div', null)
   }
@@ -235,6 +246,7 @@ ReactHowler.propTypes = {
   onVolume: PropTypes.func,
   onStop: PropTypes.func,
   onLoad: PropTypes.func,
+  onLock: PropTypes.func,
   onLoadError: PropTypes.func,
   html5: PropTypes.bool
 }
@@ -253,6 +265,7 @@ ReactHowler.defaultProps = {
   onVolume: noop,
   onStop: noop,
   onLoad: noop,
+  onLock: noop,
   onLoadError: noop,
   html5: false
 }

@@ -2,15 +2,15 @@
   "name": "react-howler",
   "version": "5.0.0",
   "description": "A React.js wrapper for howler.js (audio player)",
-  "main": "lib/index.js",
+  "main": "lib/ReactHowler.js",
   "scripts": {
     "prebabelify": "rimraf lib",
     "babelify": "babel src -d lib",
-    "example:react": "npm run babelify && cd examples/react && yarn install && NODE_PATH=../../lib npm start",
-    "example:react:build": "npm run lint && npm run babelify && cd examples/react && yarn install && NODE_PATH=../../lib npm run build",
-    "predeploy": "npm run example:react:build",
+    "example:react": "yarn babelify && cd examples/react && yarn install && NODE_PATH=../../lib npm start",
+    "example:react:build": "yarn lint && yarn babelify && cd examples/react && yarn install && NODE_PATH=../../lib yarn build",
+    "predeploy": "yarn example:react:build",
     "deploy": "babel-node bin/deploy-gh-pages",
-    "prepublish": "npm run lint && npm run babelify",
+    "prepublish": "yarn lint && yarn babelify",
     "lint": "standard",
     "test": "echo \"Error: no test specified\"",
     "release": "npmpub"
@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/thangngoc89/react-howler#readme",
   "dependencies": {
-    "howler": "^2.2.0",
+    "howler": "^2.2.1",
     "prop-types": "^15.5.6"
   },
   "devDependencies": {
