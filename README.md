@@ -74,6 +74,8 @@ onStop    | noop    | Called when audio is stopped
 onLoad    | noop    | Called when audio is loaded (buffered)
 onLoadError | noop  | Called when an error occurs whilst attempting to load media
 onEnd     |  noop   | Called when media finishes playing
+onSeek    | noop    | Called when the sound has been seeked. The first parameter is the ID of the sound. `onSeek(id)`
+onPlayError | noop  | Called when the sound is unable to play. The first parameter is the ID of the sound and the second is the error message/code. `onPlayError(id, errorCode)`
 
 # Methods
 

@@ -1,3 +1,7 @@
+# 5.1.0 - 2021-06-24
+
+- Added: `onSeek` and `onPlayError` props (#117)
+
 # 5.0.0 - 2020-11-14
 
 ## Breaking Changes
