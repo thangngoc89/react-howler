@@ -102,6 +102,12 @@ Check the load status of the `Howl`, returns a string `unloaded`, `loading` or `
 Stops playback of sound, resetting `seek` to `0`.
 * **id**: `Number` `optional` The sound ID. If none is passed, all sounds in group are stopped.
 
+#### rate([value], [id])
+Speeds up/down an audio playback.
+Calling with no arguments will reset all howls to default rate.
+* **value**: `Number` `optional` The playback rate. If empty, will default to `1`.
+* **id**: `Number` `optional` The sound ID. If empty, all sounds in group get updated.
+
 #### Other howler.js methods
 If you need to use other howler.js [methods](https://github.com/goldfire/howler.js#methods)
 that are not included in this wrapper you can access the howler instance directly via `howler`
