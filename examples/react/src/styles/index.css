@@ -172,3 +172,7 @@ a.source-link:hover {
 .slider-container input {
   vertical-align: bottom;
 }
+
+.rate {
+  margin-bottom: 0.5em;
+}
