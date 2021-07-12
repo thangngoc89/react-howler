@@ -130,6 +130,23 @@ class ReactHowler extends Component {
   }
 
   /**
+   * Update playback rate (speed) of sound or group
+   * If no value given, apply default rate of 1
+   * If no id given, apply rate to all
+   * @param {Number} value = 1 [rate to apply]
+   * @param {Number} id = undefined [sound of group to update]
+   */
+  rate (value = 1, id = undefined) {
+    if (typeof value === 'number') {
+      if (id) {
+        this.howler.rate(value, id)
+      } else {
+        this.howler.rate(value)
+      }
+    }
+  }
+
+  /**
    * Check the load status of the Howl
    * @return {String} [unloaded, loading or loaded]
    */
