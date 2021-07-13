@@ -14,6 +14,7 @@ class FullControl extends React.Component {
       mute: false,
       volume: 1.0,
       seek: 0.0,
+      rate: 1,
       isSeeking: false
     }
     this.handleToggle = this.handleToggle.bind(this)
@@ -27,6 +28,7 @@ class FullControl extends React.Component {
     this.handleMouseDownSeek = this.handleMouseDownSeek.bind(this)
     this.handleMouseUpSeek = this.handleMouseUpSeek.bind(this)
     this.handleSeekingChange = this.handleSeekingChange.bind(this)
+    this.handleRate = this.handleRate.bind(this)
   }
 
   componentWillUnmount () {
@@ -111,6 +113,12 @@ class FullControl extends React.Component {
     }
   }
 
+  handleRate (e) {
+    const rate = parseFloat(e.target.value)
+    this.player.rate(rate)
+    this.setState({ rate })
+  }
+
   clearRAF () {
     raf.cancel(this._raf)
   }
@@ -188,6 +196,22 @@ class FullControl extends React.Component {
                 onChange={this.handleSeekingChange}
                 onMouseDown={this.handleMouseDownSeek}
                 onMouseUp={this.handleMouseUpSeek}
+              />
+            </span>
+          </label>
+        </div>
+
+        <div className='rate'>
+          <label>
+            Rate:
+            <span className='slider-container'>
+              <input
+                type='range'
+                min='0.1'
+                max='3'
+                step='.01'
+                value={this.state.rate}
+                onChange={this.handleRate}
               />
             </span>
           </label>

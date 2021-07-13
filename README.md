@@ -64,6 +64,7 @@ playing   | true    | Set to `true` or `false` to pause or play the media.<br>Se
 loop      | false   | Set to `true` or `false` to enable/disable loop
 mute      | false   | Set to `true` or `false` to mute/unmute current audio
 volume    | 1.0     | The volume of the specific howl, from `0.0` to `1.0`
+rate      | 1       | The initial playback rate (speed)
 html5     | false   | Set to `true` to force HTML5 Audio. This should be used for large audio files so that you don't have to wait for the full file to be downloaded and decoded before playing.
 format    | []      | howler.js automatically detects your file format from the extension, but you may also specify a format in situations where extraction won't work (such as with a SoundCloud stream).
 xhr       | {}      | When using Web Audio, howler.js uses an XHR request to load the audio files. If you need to send custom headers, set the HTTP method or enable `withCredentials` ([see reference](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials)), include them with this parameter. Each is optional (method defaults to `GET`, headers default to `null` and withCredentials defaults to `false`). For example: <pre lang="JSX">`<ReactHowler src="sound.webm" xhr={{ method: 'POST', headers: { Authorization: 'Bearer:' + token, }, withCredentials: true, }} />`</pre>
@@ -100,6 +101,12 @@ Check the load status of the `Howl`, returns a string `unloaded`, `loading` or `
 #### stop([id])
 Stops playback of sound, resetting `seek` to `0`.
 * **id**: `Number` `optional` The sound ID. If none is passed, all sounds in group are stopped.
+
+#### rate([value], [id])
+Speeds up/down an audio playback.
+Calling with no arguments will reset all howls to default rate.
+* **value**: `Number` `optional` The playback rate. If empty, will default to `1`.
+* **id**: `Number` `optional` The sound ID. If empty, all sounds in group get updated.
 
 #### Other howler.js methods
 If you need to use other howler.js [methods](https://github.com/goldfire/howler.js#methods)
