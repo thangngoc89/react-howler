@@ -205,15 +205,15 @@ class FullControl extends React.Component {
           <label>
             Rate:
             <span className='slider-container'>
-            <input
-              type='range'
-              min='0.1'
-              max='3'
-              step='.01'
-              value={this.state.rate}
-              onChange={this.handleRate}
-            />
-          </span>
+              <input
+                type='range'
+                min='0.1'
+                max='3'
+                step='.01'
+                value={this.state.rate}
+                onChange={this.handleRate}
+              />
+            </span>
           </label>
         </div>
 
