@@ -214,6 +214,7 @@ class FullControl extends React.Component {
                 onChange={this.handleRate}
               />
             </span>
+            {this.state.rate.toFixed(2)}
           </label>
         </div>
 
