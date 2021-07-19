@@ -1,3 +1,7 @@
+# 5.2.0 - 2021-07-19
+
+- Added: `rate` prop and method (#119)
+
 # 5.1.0 - 2021-06-24
 
 - Added: `onSeek` and `onPlayError` props (#117)
