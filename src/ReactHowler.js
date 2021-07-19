@@ -41,6 +41,7 @@ class ReactHowler extends Component {
         loop: props.loop,
         preload: props.preload,
         volume: props.volume,
+        rate: props.rate,
         onend: props.onEnd,
         onplay: props.onPlay,
         onplayerror: props.onPlayError,
@@ -125,6 +126,23 @@ class ReactHowler extends Component {
       this.howler.pause(id)
     } else {
       this.howler.pause()
+    }
+  }
+
+  /**
+   * Update playback rate (speed) of sound or group
+   * If no value given, apply default rate of 1
+   * If no id given, apply rate to all
+   * @param {Number} value = 1 [rate to apply]
+   * @param {Number} id = undefined [sound of group to update]
+   */
+  rate (value = 1, id = undefined) {
+    if (typeof value === 'number') {
+      if (id) {
+        this.howler.rate(value, id)
+      } else {
+        this.howler.rate(value)
+      }
     }
   }
 
@@ -231,6 +249,7 @@ ReactHowler.propTypes = {
   loop: PropTypes.bool,
   preload: PropTypes.bool,
   volume: PropTypes.number,
+  rate: PropTypes.number,
   onEnd: PropTypes.func,
   onPause: PropTypes.func,
   onPlay: PropTypes.func,
@@ -251,6 +270,7 @@ ReactHowler.defaultProps = {
   preload: true,
   loop: false,
   volume: 1.0,
+  rate: 1,
   onEnd: noop,
   onPause: noop,
   onPlay: noop,
